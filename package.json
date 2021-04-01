@@ -1,6 +1,13 @@
 {
   "name": "vite-map-app",
   "version": "0.0.0",
+  "description": "Testing out Vite with @arcgis/core ESM.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/COV-GIS/vite-map-app.git"
+  },
+  "author": "COV-GIS",
+  "license": "MIT",
   "scripts": {
     "replace": "node ./helpers/replace.js",
     "dev": "vite",
