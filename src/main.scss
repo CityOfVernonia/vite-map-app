@@ -1,0 +1,19 @@
+$icomoon-font-path: "./../node_modules/@arcgis/core/assets/esri/themes/base/icons/fonts/";
+$calcite-fonts-path: "./../node_modules/@arcgis/core/assets/esri/themes/base/fonts/fonts/";
+
+@import "./../node_modules/@arcgis/core/assets/esri/themes/base/_core.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: $font-family;
+}
+
+.esri-view {
+  height: 100%;
+  width: 100%;
+}
