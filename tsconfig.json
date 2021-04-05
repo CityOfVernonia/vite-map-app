@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
     "strict": true,
+    "esModuleInterop": true,
     "importHelpers": true,
     "paths": {
-      "tslib" : ["./node_modules/tslib/tslib.d.ts"]
+      "tslib": ["./node_modules/tslib/tslib.d.ts"]
     },
     "experimentalDecorators": true,
     "jsx": "react",
     "jsxFactory": "tsx"
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "node_modules/cov-arcgis-esm/src/**/*"
   ]
 }

@@ -6,6 +6,8 @@ import Basemap from '@arcgis/core/Basemap';
 
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
 
+import CalciteNavigation from 'cov-arcgis-esm/src/widgets/CalciteNavigation';
+
 import MapScale from './widgets/MapScale';
 
 esriConfig.portalUrl = 'https://gisportal.vernonia-or.gov/portal';
@@ -53,7 +55,14 @@ const view = new MapView({
   container: document.createElement('div'),
 });
 
+view.ui.empty('top-left');
+
 view.when(() => {
+  view.ui.add(
+    new CalciteNavigation({ view }),
+    'top-left',
+  );
+
   view.ui.add(
     new MapScale({
       view,

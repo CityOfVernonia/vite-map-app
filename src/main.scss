@@ -18,4 +18,6 @@ body {
   width: 100%;
 }
 
+@import "./../node_modules/cov-arcgis-esm/src/widgets/CalciteNavigation/styles/CalciteNavigation.scss";
+
 @import "./widgets/MapScale/styles/MapScale.scss";

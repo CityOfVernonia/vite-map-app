@@ -31,7 +31,8 @@
     "vite": "^2.1.5"
   },
   "dependencies": {
-    "@arcgis/core": "^4.19.0-next.20210404"
+    "@arcgis/core": "^4.19.0-next.20210404",
+    "cov-arcgis-esm": "0.0.17"
   },
   "eslintConfig": {
     "env": {

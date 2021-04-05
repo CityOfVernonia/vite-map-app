@@ -22,11 +22,9 @@ export default class MapScale extends Widget {
   }
 
   render(): tsx.JSX.Element {
-    const { view: { scale } } = this;
-    return (
-      <div class={CSS.base}>
-        1 : {Number(scale.toFixed(0)).toLocaleString()}
-      </div>
-    );
+    const {
+      view: { scale },
+    } = this;
+    return <div class={CSS.base}>1 : {Number(scale.toFixed(0)).toLocaleString()}</div>;
   }
 }
