@@ -3,4 +3,7 @@ export default {
   build: {
     outDir: './../dist',
   },
+  esbuild: {
+    jsxFactory: 'tsx',
+  },
 };

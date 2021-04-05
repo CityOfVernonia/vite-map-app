@@ -6,6 +6,8 @@ import Basemap from '@arcgis/core/Basemap';
 
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
 
+import MapScale from './widgets/MapScale';
+
 esriConfig.portalUrl = 'https://gisportal.vernonia-or.gov/portal';
 
 const cityLimits = new FeatureLayer({
@@ -49,6 +51,15 @@ const view = new MapView({
     },
   },
   container: document.createElement('div'),
+});
+
+view.when(() => {
+  view.ui.add(
+    new MapScale({
+      view,
+    }),
+    'top-right',
+  );
 });
 
 document.body.append(view.container);
