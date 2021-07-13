@@ -1,0 +1,78 @@
+/** main style entry point **/
+
+// colors and other @arcgis/core sass variables
+@import "variables";
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
+$font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// @arcgis/core sass
+@import "./../../node_modules/@arcgis/core/assets/esri/themes/base/core";
+
+// calcite theming (overrides only and cannot use vars)
+:root {
+  --calcite-ui-brand: #{$cov};
+  --calcite-ui-brand-hover: #{$cov-hover};
+  --calcite-ui-brand-press: #{$cov-press};
+  --calcite-ui-text-link: #{$cov-hover};
+  --calcite-link-blue-underline: rgba(#{$cov-hover}, 0.4);
+  font-family: $font-family;
+}
+
+// same here since @arcgis/core adds this to view ui since 4.20
+.calcite-theme-light {
+  --calcite-ui-brand: #44693d;
+  --calcite-ui-brand-hover: #395933;
+  --calcite-ui-brand-press: #334e2d;
+  --calcite-ui-text-link: #395933;
+  font-family: $font-family;
+}
+
+// application
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: $font-family;
+  color: var(--calcite-ui-text-1);
+  background-color: var(--calcite-ui-background);
+}
+
+/** global esri overrides **/
+
+// tighten up ui
+.esri-ui-top-right {
+  top: -5px;
+  right: -5px;
+}
+
+.esri-ui-top-left {
+  top: -5px;
+  left: -5px;
+}
+
+.esri-ui-bottom-left {
+  bottom: -5px;
+  left: -5px;
+}
+
+.esri-ui-top-right {
+  top: -5px;
+  right: -5px;
+}
+
+// smaller basemap toggle
+.esri-basemap-toggle {
+  width: 59px;
+  height: 59px;
+}
+
+.esri-basemap-toggle__container,
+.esri-basemap-toggle__image {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--calcite-border-radius);
+}

@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "lib": [
+      "ESNext",
+      "dom",
+    ],
     "strict": true,
     "esModuleInterop": true,
     "importHelpers": true,
@@ -8,10 +12,9 @@
     },
     "experimentalDecorators": true,
     "jsx": "react",
-    "jsxFactory": "tsx"
+    "jsxFactory": "tsx",
   },
   "include": [
-    "src/**/*",
-    "node_modules/cov-arcgis-esm/src/**/*"
+    "src/**/*"
   ]
 }

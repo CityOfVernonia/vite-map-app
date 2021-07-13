@@ -1,0 +1,70 @@
+// vernonia colors
+$cov: #44693d;          // rgb(68, 105, 61)
+$cov-hover: #395933;    // rgb(57, 89, 51)
+$cov-press: #334e2d;
+
+// @arcgis/core font paths for vite to resolve
+$icomoon-font-path: "./../../node_modules/@arcgis/core/assets/esri/themes/base/icons/fonts/";
+$calcite-fonts-path: "./../../node_modules/@arcgis/core/assets/esri/themes/base/fonts/fonts/";
+
+// @arcgis/core widgets to include (comment out)
+$include_AreaMeasurement2D: false;
+$include_AreaMeasurement3D: false;
+$include_Attachments: false;
+// $include_Attribution: false;
+$include_BasemapGallery: false;
+$include_BasemapLayerList: false;
+// $include_BasemapToggle: false;
+$include_BinaryColorSizeSlider: false;
+$include_Bookmarks: false;
+$include_BuildingExplorer: false;
+$include_ButtonMenu: false;
+$include_ClassedColorSlider: false;
+$include_ClassedSizeSlider: false;
+$include_Compass: false;
+$include_ColorSizeSlider: false;
+$include_ColorSlider: false;
+$include_CoordinateConversion: false;
+$include_DatePicker: false;
+$include_Daylight: false;
+$include_Directions: false;
+$include_DirectLineMeasurement3D: false;
+$include_DistanceMeasurement2D: false;
+$include_Editor: false;
+$include_ElevationProfile: false;
+$include_Expand: false;
+$include_Feature: false;
+$include_FeatureContent: false;
+$include_FeatureMedia: false;
+$include_FeatureForm: false;
+$include_FeatureTable: false;
+$include_FeatureTemplates: false;
+$include_FloorFilter: false;
+$include_Grid: false;
+$include_HeatmapSlider: false;
+$include_Histogram: false;
+$include_HistogramRangeSlider: false;
+$include_IdentityForm: false;
+$include_IdentityModal: false;
+$include_ItemList: false;
+// $include_LayerList: false;
+// $include_Legend: false;
+$include_LineOfSight: false;
+$include_Measurement: false;
+$include_NavigationToggle: false;
+$include_OpacitySlider: false;
+$include_Print: false;
+// $include_Popup: false;
+// $include_ScaleBar: false;
+$include_ScaleRangeSlider: false;
+// $include_Search: false;
+$include_SizeSlider: false;
+$include_Sketch: false;
+$include_Slice: false;
+$include_Slider: false;
+$include_Spinner: false;
+$include_Swipe: false;
+$include_TableList: false;
+$include_TimePicker: false;
+$include_TimeSlider: false;
+$include_Zoom: false;

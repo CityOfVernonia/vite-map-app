@@ -1,35 +1,30 @@
+// import esri = __esri;
+
+// esri config and auth
 import esriConfig from '@arcgis/core/config';
 
+// loading screen
+import LoadingScreen from './../node_modules/@vernonia/core/widgets/LoadingScreen';
+
+// map, view and layers
 import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import Basemap from '@arcgis/core/Basemap';
 
-import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
+// the viewer
+import Viewer from './../node_modules/@vernonia/core/Viewer';
 
-import CalciteNavigation from 'cov-arcgis-esm/src/widgets/CalciteNavigation';
+// app config and init loading screen
+const title = 'Vite Map App';
 
-import MapScale from './widgets/MapScale';
+const loadingScreen = new LoadingScreen({
+  title,
+});
 
+// config portal and auth
 esriConfig.portalUrl = 'https://gisportal.vernonia-or.gov/portal';
 
-const cityLimits = new FeatureLayer({
-  portalItem: {
-    id: 'eb0c7507611e44b7923dd1c0167e3b92',
-  },
-});
-
-const ugb = new FeatureLayer({
-  portalItem: {
-    id: '2f760ba990ab4d6e831d04b85a8a0bf3',
-  },
-});
-
-const taxLots = new FeatureLayer({
-  portalItem: {
-    id: 'a6063eb199e640e0bbc2d5ceca23de9a',
-  },
-});
-
+// view
 const view = new MapView({
   map: new Map({
     basemap: new Basemap({
@@ -37,7 +32,7 @@ const view = new MapView({
         id: 'f36cd213cc934d2391f58f389fc9eaec',
       },
     }),
-    layers: [taxLots, ugb, cityLimits],
+    layers: [],
     ground: 'world-elevation',
   }),
   zoom: 15,
@@ -52,23 +47,15 @@ const view = new MapView({
       breakpoint: false,
     },
   },
-  container: document.createElement('div'),
 });
 
-view.ui.empty('top-left');
+new Viewer({
+  view,
+  title,
+  includeHeader: false,
+  widgets: [],
+});
 
 view.when(() => {
-  view.ui.add(
-    new CalciteNavigation({ view }),
-    'top-left',
-  );
-
-  view.ui.add(
-    new MapScale({
-      view,
-    }),
-    'top-right',
-  );
+  loadingScreen.end();
 });
-
-document.body.append(view.container);
