@@ -37,7 +37,7 @@
   "dependencies": {
     "@arcgis/core": "^4.20.2",
     "@esri/calcite-components": "^1.0.0-beta.59",
-    "@vernonia/core": "^1.0.6"
+    "@vernonia/core": "^1.0.7"
   },
   "eslintConfig": {
     "env": {
