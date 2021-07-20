@@ -4,7 +4,7 @@
 import esriConfig from '@arcgis/core/config';
 
 // loading screen
-import LoadingScreen from './../node_modules/@vernonia/core/widgets/LoadingScreen';
+import LoadingScreen from './core/widgets/LoadingScreen';
 
 // map, view and layers
 import Map from '@arcgis/core/Map';
@@ -12,7 +12,7 @@ import MapView from '@arcgis/core/views/MapView';
 import Basemap from '@arcgis/core/Basemap';
 
 // the viewer
-import Viewer from './../node_modules/@vernonia/core/Viewer';
+import Viewer from './core/Viewer';
 
 // app config and init loading screen
 const title = 'Vite Map App';
