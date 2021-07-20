@@ -5,7 +5,7 @@
     "build": "vite build",
     "dev": "vite",
     "lint": "eslint . --ext .js,.ts,.tsx",
-    "postinstall": "node ./scripts/sass-replace.js && node ./scripts/copy-calcite.js",
+    "postinstall": "node ./scripts/sass-replace.js && node ./scripts/copy-assets.js",
     "prettier": "prettier --write \"src/**/*.ts?(x)\" && prettier --write \"src/**/*.js\"",
     "serve": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
