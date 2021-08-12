@@ -1,0 +1,28 @@
+/** main style entry point **/
+
+// cov and other @arcgis/core sass variables
+@import "./core/css/variables";
+
+// esri widgets to include
+$include_Attribution: true;
+$include_BasemapToggle: true;
+$include_LayerList: true;
+$include_Legend: true;
+$include_Popup: true;
+$include_ScaleBar: true;
+$include_Search: true;
+
+// @arcgis/core sass
+@import "./../node_modules/@arcgis/core/assets/esri/themes/base/core";
+
+// application
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+@import "./core/css/cov.scss";
