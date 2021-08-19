@@ -52,7 +52,7 @@ const view = new MapView({
 new Viewer({
   view,
   title,
-  includeHeader: false,
+  // includeHeader: false,
   widgets: [],
 });
 
