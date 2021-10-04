@@ -1,7 +1,7 @@
 /** main style entry point **/
 
 // cov and other @arcgis/core sass variables
-@import "./core/css/variables";
+@import "@vernonia/core/css/variables";
 
 // esri widgets to include
 $include_Attribution: true;
@@ -29,4 +29,4 @@ body {
   overflow: hidden;
 }
 
-@import "./core/css/cov.scss";
+@import "@vernonia/core/css/cov.scss";
