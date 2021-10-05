@@ -15,6 +15,7 @@
     "jsxFactory": "tsx",
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "./node_modules/@vernonia/core/interfaces.d.ts"
   ]
 }
