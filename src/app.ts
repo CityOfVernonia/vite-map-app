@@ -14,6 +14,9 @@ import Basemap from '@arcgis/core/Basemap';
 // layout
 import Viewer from '@vernonia/core/layouts/Viewer';
 
+// widgets
+import ViewControl from '@vernonia/core/widgets/ViewControl';
+
 // config portal and auth
 esriConfig.portalUrl = 'https://gisportal.vernonia-or.gov/portal';
 
@@ -52,9 +55,13 @@ const view = new MapView({
 new Viewer({
   view,
   title,
-  includeSearch: false,
 });
 
 view.when(() => {
+  view.ui.add(
+    new ViewControl({ view }),
+    'top-left',
+  );
+
   loadingScreen.end();
 });
