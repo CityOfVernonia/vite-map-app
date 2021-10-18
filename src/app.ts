@@ -58,10 +58,7 @@ new Viewer({
 });
 
 view.when(() => {
-  view.ui.add(
-    new ViewControl({ view }),
-    'top-left',
-  );
+  view.ui.add(new ViewControl({ view }), 'top-left');
 
   loadingScreen.end();
 });

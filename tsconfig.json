@@ -13,6 +13,9 @@
     "experimentalDecorators": true,
     "jsx": "react",
     "jsxFactory": "tsx",
+    "types": [
+      "@esri/calcite-components"
+    ]
   },
   "include": [
     "src/**/*",
