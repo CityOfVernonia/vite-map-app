@@ -39,7 +39,7 @@
     "@arcgis/core": "^4.21.2",
     "@esri/calcite-components": "^1.0.0-beta.67",
     "@vernonia/assessor-urls": "^1.0.2",
-    "@vernonia/core": "^1.0.48"
+    "@vernonia/core": "^1.0.49"
   },
   "eslintConfig": {
     "env": {
