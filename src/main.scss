@@ -17,7 +17,7 @@ $icomoon-font-path: "./../node_modules/@arcgis/core/assets/esri/themes/base/icon
 $calcite-fonts-path: "./../node_modules/@arcgis/core/assets/esri/themes/base/fonts/fonts/";
 
 // @arcgis/core sass
-@import "./../node_modules/@arcgis/core/assets/esri/themes/base/core";
+@import "@arcgis/core/assets/esri/themes/base/core";
 
 // application
 html,
@@ -29,4 +29,4 @@ body {
   overflow: hidden;
 }
 
-@import "@vernonia/core/css/cov.scss";
+@import "@vernonia/core/css/cov";
