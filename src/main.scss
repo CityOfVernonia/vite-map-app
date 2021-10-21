@@ -13,8 +13,8 @@ $include_ScaleBar: true;
 $include_Search: true;
 
 // @arcgis/core font paths for vite to resolve
-$icomoon-font-path: "./../node_modules/@arcgis/core/assets/esri/themes/base/icons/fonts/";
-$calcite-fonts-path: "./../node_modules/@arcgis/core/assets/esri/themes/base/fonts/fonts/";
+$icomoon-font-path: "@arcgis/core/assets/esri/themes/base/icons/fonts/";
+$calcite-fonts-path: "@arcgis/core/assets/esri/themes/base/fonts/fonts/";
 
 // @arcgis/core sass
 @import "@arcgis/core/assets/esri/themes/base/core";
