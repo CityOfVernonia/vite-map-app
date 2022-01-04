@@ -43,4 +43,4 @@ async function copyCore() {
 
 copyCalcite();
 
-// copyCore();
+copyCore();
