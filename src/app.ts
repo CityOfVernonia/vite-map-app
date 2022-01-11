@@ -3,8 +3,9 @@ import './main.scss';
 // esri config and auth
 import esriConfig from '@arcgis/core/config';
 
-// loading screen
-import LoadingScreen from '@vernonia/core/widgets/LoadingScreen';
+// loader
+import Loader from '@vernonia/Loader/dist/Loader';
+import '@vernonia/Loader/dist/Loader.css';
 
 // map, view and layers
 import Map from '@arcgis/core/Map';
@@ -23,7 +24,7 @@ esriConfig.portalUrl = 'https://gisportal.vernonia-or.gov/portal';
 // app config and init loading screen
 const title = 'Vite Map App';
 
-const loadingScreen = new LoadingScreen({
+const loader = new Loader({
   title,
 });
 
@@ -60,5 +61,5 @@ new Viewer({
 view.when(() => {
   view.ui.add(new ViewControl({ view }), 'top-left');
 
-  loadingScreen.end();
+  loader.end();
 });

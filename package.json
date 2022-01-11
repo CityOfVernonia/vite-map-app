@@ -8,7 +8,7 @@
     "postinstall": "node ./scripts/sass-replace.js && node ./scripts/copy-assets.js",
     "prettier": "prettier --write \"src/**/*.ts?(x)\" && prettier --write \"src/**/*.js\"",
     "serve": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run prettier && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/COV-GIS/vite-map-app#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.9.0",
-    "@typescript-eslint/parser": "^5.9.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
     "ansi-regex": ">=6.0.1",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
@@ -30,16 +30,17 @@
     "fs-extra": "^10.0.0",
     "prettier": "^2.5.1",
     "replace-in-file": "^6.3.2",
-    "sass": "^1.45.2",
+    "sass": "^1.47.0",
     "tslib": "^2.3.1",
     "typescript": "^4.5.4",
     "vite": "^2.7.10"
   },
   "dependencies": {
     "@arcgis/core": "^4.22.2",
-    "@esri/calcite-components": "^1.0.0-beta.72",
+    "@esri/calcite-components": "^1.0.0-beta.74",
     "@vernonia/assessor-urls": "^1.0.2",
-    "@vernonia/core": "^1.0.58"
+    "@vernonia/core": "^1.0.58",
+    "@vernonia/Loader": "git+https://github.com/CityOfVernonia/Widget.Loader.git#v1.1.0"
   },
   "eslintConfig": {
     "env": {
