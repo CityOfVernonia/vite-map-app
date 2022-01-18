@@ -3,30 +3,23 @@ import './main.scss';
 // esri config and auth
 import esriConfig from '@arcgis/core/config';
 
-// loader
-import Loader from '@vernonia/Loader/dist/Loader';
-import '@vernonia/Loader/dist/Loader.css';
-
 // map, view and layers
 import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import Basemap from '@arcgis/core/Basemap';
 
-// layout
-import Viewer from '@vernonia/core/layouts/Viewer';
+// application
+import Application from '@vernonia/core/Application';
 
 // widgets
-import ViewControl from '@vernonia/core/widgets/ViewControl';
+import Measure from '@vernonia/core/widgets/Measure';
+import Print from '@vernonia/core/widgets/Print';
 
 // config portal and auth
 esriConfig.portalUrl = 'https://gisportal.vernonia-or.gov/portal';
 
 // app config and init loading screen
 const title = 'Vite Map App';
-
-const loader = new Loader({
-  title,
-});
 
 // view
 const view = new MapView({
@@ -53,13 +46,21 @@ const view = new MapView({
   },
 });
 
-new Viewer({
+new Application({
   view,
   title,
+  uiWidgets: [
+    {
+      widget: new Measure({ view }),
+      text: 'Measure',
+      icon: 'measure',
+    },
+    {
+      widget: new Print({ view, printServiceUrl: '' }),
+      text: 'Print',
+      icon: 'print',
+    },
+  ],
 });
 
-view.when(() => {
-  view.ui.add(new ViewControl({ view }), 'top-left');
-
-  loader.end();
-});
+// view.when(() => { });

@@ -30,18 +30,16 @@
     "fs-extra": "^10.0.0",
     "prettier": "^2.5.1",
     "replace-in-file": "^6.3.2",
-    "sass": "^1.48.0",
+    "sass": "^1.49.0",
     "tslib": "^2.3.1",
     "typescript": "^4.5.4",
-    "vite": "^2.7.12"
+    "vite": "^2.7.13"
   },
   "dependencies": {
     "@arcgis/core": "^4.22.2",
     "@esri/calcite-components": "^1.0.0-beta.74",
-    "@vernonia/Loader": "git+https://github.com/CityOfVernonia/Widget.Loader.git#v1.1.0",
     "@vernonia/assessor-urls": "^1.0.2",
-    "@vernonia/core": "^1.0.58",
-    "shell-application": "git+https://github.com/CityOfVernonia/ShellApplication.git#v1.0.0"
+    "@vernonia/core": "^1.0.60"
   },
   "eslintConfig": {
     "env": {
@@ -55,6 +53,7 @@
       "node_modules/**",
       "scripts/**",
       "src/public/**",
+      "src/core/**",
       "vite.config.js"
     ],
     "rules": {

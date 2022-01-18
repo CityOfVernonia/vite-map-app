@@ -1,6 +1,5 @@
 /** main style entry point **/
 
-// cov and other @arcgis/core sass variables
 @import "@vernonia/core/css/variables";
 
 // esri widgets to include
@@ -19,14 +18,6 @@ $calcite-fonts-path: "@arcgis/core/assets/esri/themes/base/fonts/fonts/";
 // @arcgis/core sass
 @import "@arcgis/core/assets/esri/themes/base/core";
 
-// application
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 @import "@vernonia/core/css/cov";
+
+@import "@vernonia/core/Application";
