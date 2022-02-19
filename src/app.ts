@@ -8,8 +8,8 @@ import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import Basemap from '@arcgis/core/Basemap';
 
-// application
-import Application from '@vernonia/core/Application';
+import ApplicationLayout from '@vernonia/application-layout/dist/ApplicationLayout';
+import '@vernonia/application-layout/dist/ApplicationLayout.css';
 
 // widgets
 import Measure from '@vernonia/core/widgets/Measure';
@@ -46,10 +46,12 @@ const view = new MapView({
   },
 });
 
-new Application({
+new ApplicationLayout({
   view,
-  title,
-  uiWidgets: [
+  loaderOptions: {
+    title,
+  },
+  contextualWidgets: [
     {
       widget: new Measure({ view }),
       text: 'Measure',
