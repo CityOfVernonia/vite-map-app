@@ -12,7 +12,9 @@ import ApplicationLayout from '@vernonia/application-layout/dist/ApplicationLayo
 import '@vernonia/application-layout/dist/ApplicationLayout.css';
 
 // widgets
-import Measure from '@vernonia/core/widgets/Measure';
+import Measure from '@vernonia/measure/dist/Measure';
+import '@vernonia/measure/dist/Measure.css';
+
 import Print from '@vernonia/core/widgets/Print';
 
 // config portal and auth
