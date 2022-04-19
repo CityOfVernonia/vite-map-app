@@ -18,7 +18,6 @@
     ]
   },
   "include": [
-    "src/**/*",
-    "./node_modules/@vernonia/core/interfaces.d.ts"
+    "src/**/*"
   ]
 }

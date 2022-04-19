@@ -1,16 +1,12 @@
 /** main style entry point **/
 
-@import "@vernonia/core/css/variables";
-
 // esri widgets to include
 $include_Attribution: true;
 $include_BasemapToggle: true;
 $include_LayerList: true;
 $include_Legend: true;
 $include_Popup: true;
-$include_ScaleBar: true;
 $include_Search: true;
-$include_ElevationProfile: true;
 
 // @arcgis/core font paths for vite to resolve
 $icomoon-font-path: "@arcgis/core/assets/esri/themes/base/icons/fonts/";
@@ -18,5 +14,3 @@ $calcite-fonts-path: "@arcgis/core/assets/esri/themes/base/fonts/fonts/";
 
 // @arcgis/core sass
 @import "@arcgis/core/assets/esri/themes/base/core";
-
-@import "@vernonia/core/css/cov";

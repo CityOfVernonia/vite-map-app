@@ -21,26 +21,4 @@ async function copyCalcite() {
 
 }
 
-async function copyCore() {
-
-  const src = path.resolve(__dirname, './../node_modules/@vernonia/core');
-  const dest = path.resolve(__dirname, './../src/core');
-
-  if (!src) {
-    console.log('@vernonia/core must be installed');
-    return;
-  }
-
-  if (dest) {
-    await fs.remove(dest);
-  }
-
-  await fs.ensureDir(dest);
-
-  fs.copy(src, dest);
-
-}
-
 copyCalcite();
-
-copyCore();

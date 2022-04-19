@@ -8,14 +8,16 @@ import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import Basemap from '@arcgis/core/Basemap';
 
-import ApplicationLayout from '@vernonia/application-layout/dist/ApplicationLayout';
-import '@vernonia/application-layout/dist/ApplicationLayout.css';
+// layout
+import Layout from '@vernonia/core/dist/Layout';
+import '@vernonia/core/dist/Layout.css';
 
 // widgets
-import Measure from '@vernonia/measure/dist/Measure';
-import '@vernonia/measure/dist/Measure.css';
+import Measure from '@vernonia/core/dist/widgets/Measure';
+import '@vernonia/core/dist/widgets/Measure.css';
 
-import Print from '@vernonia/core/widgets/Print';
+import PrintSnapshot from '@vernonia/core/dist/widgets/PrintSnapshot';
+import '@vernonia/core/dist/widgets/Snapshot.css';
 
 // config portal and auth
 esriConfig.portalUrl = 'https://gisportal.vernonia-or.gov/portal';
@@ -48,19 +50,22 @@ const view = new MapView({
   },
 });
 
-new ApplicationLayout({
+new Layout({
   view,
   loaderOptions: {
     title,
   },
-  contextualWidgets: [
+  mapHeadingOptions: {
+    title,
+  },
+  uiWidgets: [
     {
       widget: new Measure({ view }),
       text: 'Measure',
       icon: 'measure',
     },
     {
-      widget: new Print({ view, printServiceUrl: '' }),
+      widget: new PrintSnapshot({ view, printServiceUrl: '' }),
       text: 'Print',
       icon: 'print',
     },
