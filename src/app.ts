@@ -7,6 +7,7 @@ import esriConfig from '@arcgis/core/config';
 import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import Basemap from '@arcgis/core/Basemap';
+import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
 
 // layout
 import Layout from '@vernonia/core/dist/Layout';
@@ -20,20 +21,26 @@ import PrintSnapshot from '@vernonia/core/dist/widgets/PrintSnapshot';
 import '@vernonia/core/dist/widgets/Snapshot.css';
 
 // config portal and auth
-esriConfig.portalUrl = 'https://gisportal.vernonia-or.gov/portal';
+esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
 
 // app config and init loading screen
-const title = 'Vite Map App';
+const title = 'Vernonia';
 
 // view
 const view = new MapView({
   map: new Map({
     basemap: new Basemap({
       portalItem: {
-        id: 'f36cd213cc934d2391f58f389fc9eaec',
+        id: '6e9f78f3a26f48c89575941141fd4ac3',
       },
     }),
-    layers: [],
+    layers: [
+      new FeatureLayer({
+        portalItem: {
+          id :'5e1e805849ac407a8c34945c781c1d54',
+        },
+      }),
+    ],
     ground: 'world-elevation',
   }),
   zoom: 15,
@@ -57,6 +64,7 @@ new Layout({
   },
   mapHeadingOptions: {
     title,
+    logoUrl: 'city_logo_small_white.svg',
   },
   uiWidgets: [
     {
