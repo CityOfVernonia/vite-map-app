@@ -1,4 +1,4 @@
 node_modules
 dist
 src/public/calcite
-src/core
+src/dev

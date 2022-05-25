@@ -37,7 +37,7 @@ const view = new MapView({
     layers: [
       new FeatureLayer({
         portalItem: {
-          id :'5e1e805849ac407a8c34945c781c1d54',
+          id: '5e1e805849ac407a8c34945c781c1d54',
         },
       }),
     ],
