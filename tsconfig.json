@@ -14,7 +14,9 @@
     "jsx": "react",
     "jsxFactory": "tsx",
     "types": [
-      "@esri/calcite-components"
+      "@esri/calcite-components",
+      "luxon",
+      "papaparse"
     ]
   },
   "include": [
