@@ -1,5 +1,7 @@
 /** main style entry point **/
 
+/** map apps **/
+
 // esri widgets to include
 $include_Attribution: true;
 $include_BasemapToggle: true;
@@ -14,3 +16,38 @@ $calcite-fonts-path: "@arcgis/core/assets/esri/themes/base/fonts/fonts/";
 
 // @arcgis/core sass
 @import "@arcgis/core/assets/esri/themes/base/core";
+
+/** no map apps **/
+
+// @import "@esri/calcite-components/dist/calcite/calcite.css";
+
+// @import "@vernonia/core/src/variables";
+
+// :root {
+//   --calcite-ui-brand: #{$brand};
+//   --calcite-ui-brand-hover: #{$brand-hover};
+//   --calcite-ui-brand-press: #{$brand-press};
+//   --calcite-ui-text-link: #{$brand-hover};
+//   --calcite-link-blue-underline: #{$link-underline};
+// }
+
+// .calcite-theme-light {
+//   --calcite-ui-brand: #{$brand};
+//   --calcite-ui-brand-hover: #{$brand-hover};
+//   --calcite-ui-brand-press: #{$brand-press};
+//   --calcite-ui-text-link: #{$brand-hover};
+//   --calcite-link-blue-underline: #{$link-underline};
+// }
+
+// @import "@arcgis/core/assets/esri/themes/base/fonts/fonts.css";
+
+// html, body {
+//   width: 100%;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// body {
+//   font-family: var(--calcite-sans-family);
+//   font-size: 16px;
+// }
