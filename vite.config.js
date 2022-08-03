@@ -6,7 +6,7 @@ export default {
 
   // dev server options
   server: {
-    https: true,
+    // https: true,
     port: 8080,
     open: true,
   },

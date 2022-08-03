@@ -8,10 +8,11 @@ import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import Basemap from '@arcgis/core/Basemap';
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
+import SearchViewModel from '@arcgis/core/widgets/Search/SearchViewModel';
 
 // layout
-import Layout from '@vernonia/core/dist/Layout';
-import '@vernonia/core/dist/Layout.css';
+import ActionPadLayout from '@vernonia/core/dist/layouts/ActionPadLayout';
+import '@vernonia/core/dist/layouts/Layout.css';
 
 // widgets
 import Measure from '@vernonia/core/dist/widgets/Measure';
@@ -57,16 +58,28 @@ const view = new MapView({
   },
 });
 
-new Layout({
+new ActionPadLayout({
   view,
   loaderOptions: {
     title,
   },
-  mapHeadingOptions: {
+  includeHeading: true,
+  headingOptions: {
     title,
-    logoUrl: 'city_logo_small_white.svg',
+    iconUrl: 'city_logo_small_white.svg',
+    searchViewModel: new SearchViewModel(),
   },
-  uiWidgets: [
+  viewControlOptions: {
+    includeFullscreen: true,
+    includeLocate: true,
+  },
+  nextBasemap: new Basemap({
+    portalItem: {
+      id: '2622b9aecacd401583981410e07d5bb9',
+    },
+  }),
+  // position: 'end',
+  widgetInfos: [
     {
       widget: new Measure({ view }),
       text: 'Measure',
