@@ -58,6 +58,11 @@ const view = new MapView({
 new MapApplication({
   contentBehind: true,
   title: 'Vite Map App',
+  nextBasemap: new Basemap({
+    portalItem: {
+      id: '2622b9aecacd401583981410e07d5bb9',
+    },
+  }),
   panelPosition: 'end',
   panelWidgets: [
     {
