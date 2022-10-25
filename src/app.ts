@@ -11,8 +11,6 @@ import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
 import SearchViewModel from '@arcgis/core/widgets/Search/SearchViewModel';
 
 import MapApplication from '@vernonia/map-application/dist/MapApplication';
-// import MapApplication.css in main scss to override
-import '@vernonia/map-application/dist/MapApplication.css';
 
 // widgets
 import Measure from '@vernonia/core/dist/widgets/Measure';
