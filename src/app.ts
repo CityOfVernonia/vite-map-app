@@ -10,9 +10,9 @@ import Basemap from '@arcgis/core/Basemap';
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
 import SearchViewModel from '@arcgis/core/widgets/Search/SearchViewModel';
 
-// layout
-import ActionPadLayout from '@vernonia/core/dist/layouts/ActionPadLayout';
-import '@vernonia/core/dist/layouts/Layout.css';
+import MapApplication from '@vernonia/map-application/dist/MapApplication';
+// import MapApplication.css in main scss to override
+import '@vernonia/map-application/dist/MapApplication.css';
 
 // widgets
 import Measure from '@vernonia/core/dist/widgets/Measure';
@@ -23,9 +23,6 @@ import '@vernonia/core/dist/widgets/Snapshot.css';
 
 // config portal and auth
 esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
-
-// app config and init loading screen
-const title = 'Vernonia';
 
 // view
 const view = new MapView({
@@ -58,39 +55,26 @@ const view = new MapView({
   },
 });
 
-new ActionPadLayout({
-  view,
-  loaderOptions: {
-    title,
-  },
-  includeHeading: true,
-  headingOptions: {
-    title,
-    iconUrl: 'city_logo_small_white.svg',
-    searchViewModel: new SearchViewModel(),
-  },
-  viewControlOptions: {
-    includeFullscreen: true,
-    includeLocate: true,
-  },
-  nextBasemap: new Basemap({
-    portalItem: {
-      id: '2622b9aecacd401583981410e07d5bb9',
-    },
-  }),
-  // position: 'end',
-  widgetInfos: [
+new MapApplication({
+  contentBehind: true,
+  title: 'Vite Map App',
+  panelPosition: 'end',
+  panelWidgets: [
     {
       widget: new Measure({ view }),
       text: 'Measure',
       icon: 'measure',
+      type: 'calcite-panel',
     },
     {
       widget: new PrintSnapshot({ view, printServiceUrl: '' }),
       text: 'Print',
       icon: 'print',
+      type: 'calcite-panel',
     },
   ],
+  searchViewModel: new SearchViewModel({ view }),
+  view,
 });
 
 // view.when(() => { });
