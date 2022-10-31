@@ -25,8 +25,8 @@
     "@types/page": "^1.11.5",
     "@types/papaparse": "^5.3.5",
     "@types/tabulator-tables": "^5.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.41.0",
-    "@typescript-eslint/parser": "^5.41.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "ansi-regex": ">=6.0.1",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
@@ -35,16 +35,17 @@
     "prettier": "^2.7.1",
     "replace-in-file": "^6.3.5",
     "sass": "^1.55.0",
-    "tslib": "^2.4.0",
+    "tslib": "^2.4.1",
     "typescript": "^4.8.4",
-    "vite": "3.0.4"
+    "vite": "3.2.2",
+    "vite-plugin-ejs": "^1.5.0"
   },
   "dependencies": {
     "@arcgis/core": "^4.24.7",
-    "@esri/calcite-components": "1.0.0-beta.97",
+    "@esri/calcite-components": "^1.0.0-beta.97",
     "@vernonia/core": "^2.1.5",
     "@vernonia/map-application": "^1.0.4",
-    "luxon": "^3.0.4",
+    "luxon": "^3.1.0",
     "page": "^1.11.6",
     "papaparse": "^5.3.2",
     "tabulator-tables": "^5.4.2"
@@ -61,7 +62,6 @@
       "node_modules/**",
       "scripts/**",
       "src/public/**",
-      "src/core/**",
       "vite.config.js"
     ],
     "rules": {
