@@ -19,73 +19,70 @@ import '@vernonia/core/dist/widgets/Measure.css';
 import PrintSnapshot from '@vernonia/core/dist/widgets/PrintSnapshot';
 import '@vernonia/core/dist/widgets/Snapshot.css';
 
-import NewWidget from './widgets/NewWidget';
-
 // config portal and auth
 esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
 
-const layer = new FeatureLayer({
-  portalItem: {
-    id: '5e1e805849ac407a8c34945c781c1d54',
-  },
-});
+const load = async () => {
+  const cityLimits = new FeatureLayer({
+    portalItem: {
+      id: '5e1e805849ac407a8c34945c781c1d54',
+    },
+  });
 
-// view
-const view = new MapView({
-  map: new Map({
-    basemap: new Basemap({
+  await cityLimits.load();
+
+  // view
+  const view = new MapView({
+    map: new Map({
+      basemap: new Basemap({
+        portalItem: {
+          id: '6e9f78f3a26f48c89575941141fd4ac3',
+        },
+      }),
+      layers: [cityLimits],
+      ground: 'world-elevation',
+    }),
+    extent: cityLimits.fullExtent,
+    constraints: {
+      rotationEnabled: false,
+    },
+    popup: {
+      dockEnabled: true,
+      dockOptions: {
+        position: 'bottom-left',
+        breakpoint: false,
+      },
+    },
+  });
+
+  new MapApplication({
+    contentBehind: true,
+    title: 'Vite Map App',
+    nextBasemap: new Basemap({
       portalItem: {
-        id: '6e9f78f3a26f48c89575941141fd4ac3',
+        id: '2622b9aecacd401583981410e07d5bb9',
       },
     }),
-    layers: [layer],
-    ground: 'world-elevation',
-  }),
-  zoom: 15,
-  center: [-123.18291178267039, 45.8616094153766],
-  constraints: {
-    rotationEnabled: false,
-  },
-  popup: {
-    dockEnabled: true,
-    dockOptions: {
-      position: 'bottom-left',
-      breakpoint: false,
-    },
-  },
-});
+    panelPosition: 'end',
+    panelWidgets: [
+      {
+        widget: new Measure({ view }),
+        text: 'Measure',
+        icon: 'measure',
+        type: 'calcite-panel',
+      },
+      {
+        widget: new PrintSnapshot({ view, printServiceUrl: '' }),
+        text: 'Print',
+        icon: 'print',
+        type: 'calcite-panel',
+      },
+    ],
+    searchViewModel: new SearchViewModel({ view }),
+    view,
+  });
 
-new MapApplication({
-  contentBehind: true,
-  title: 'Vite Map App',
-  nextBasemap: new Basemap({
-    portalItem: {
-      id: '2622b9aecacd401583981410e07d5bb9',
-    },
-  }),
-  panelPosition: 'end',
-  panelWidgets: [
-    {
-      widget: new Measure({ view }),
-      text: 'Measure',
-      icon: 'measure',
-      type: 'calcite-panel',
-    },
-    {
-      widget: new PrintSnapshot({ view, printServiceUrl: '' }),
-      text: 'Print',
-      icon: 'print',
-      type: 'calcite-panel',
-    },
-    {
-      widget: new NewWidget({ view, layer }),
-      text: 'View',
-      icon: 'map-space',
-      type: 'calcite-panel',
-    },
-  ],
-  searchViewModel: new SearchViewModel({ view }),
-  view,
-});
+  // view.when(() => { });
+};
 
-// view.when(() => { });
+load();
