@@ -119,7 +119,60 @@ body {
   }
 }
 
+.esri-widget__table tr th {
+  border-right: 3px solid rgba($brand-dark, 0.05);
+}
+
+.esri-widget__table tr:nth-child(odd) {
+  background-color: rgba($brand-dark, 0.1);
+}
+
+.esri-widget__table tr:nth-child(even) {
+  background-color: rgba($brand, 0.02);
+}
+
 /////////////////////////
 // map application styles
 /////////////////////////
 @import "@vernonia/map-application/src/MapApplication.scss";
+
+.street-info {
+  table {
+    // background-color: var(--calcite-ui-foreground-1);
+    background-color: transparent;
+  }
+}
+
+.street-info_content,
+.street-layers_content {
+  padding: 0.75rem;
+}
+
+.street-layers {
+  .esri-legend {
+    background-color: transparent;
+  }
+
+  .esri-legend__service {
+    padding: 0;
+  }
+
+  .esri-legend__service-label {
+    display: none;
+  }
+
+  .esri-legend__layer,
+  .esri-legend__layer-body,
+  .esri-legend__layer-table,
+  .esri-legend__layer-child-table {
+    margin: 0;
+  }
+
+  .esri-legend__layer-caption {
+    display: none;
+  }
+}
+
+.street-layers_content {
+  // background-color: var(--calcite-ui-foreground-1);
+}
