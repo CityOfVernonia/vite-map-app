@@ -4,9 +4,9 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "lint": "eslint . --ext .js,.ts,.tsx",
+    "lint": "eslint . --ext .ts,.tsx",
     "postinstall": "node ./scripts/sass-replace.js",
-    "prettier": "prettier --write \"src/**/*.ts?(x)\" && prettier --write \"src/**/*.js\"",
+    "prettier": "prettier --write \"src/**/*.ts?(x)\"",
     "serve": "vite preview",
     "test": "npm run prettier && npm run lint"
   },
@@ -44,7 +44,7 @@
     "@arcgis/core": "^4.24.7",
     "@esri/calcite-components": "^1.0.0-beta.97",
     "@vernonia/core": "^2.1.5",
-    "@vernonia/map-application": "^1.0.4",
+    "@vernonia/map-application": "^1.0.5",
     "luxon": "^3.1.0",
     "page": "^1.11.6",
     "papaparse": "^5.3.2",
@@ -58,11 +58,12 @@
     "parser": "@typescript-eslint/parser",
     "ignorePatterns": [
       "package.json",
+      "vite.config.js",
       "package-lock.json",
+      "build/**",
       "node_modules/**",
       "scripts/**",
-      "src/public/**",
-      "vite.config.js"
+      "src/public/**"
     ],
     "rules": {
       "no-console": 0,

@@ -19,8 +19,16 @@ import '@vernonia/core/dist/widgets/Measure.css';
 import PrintSnapshot from '@vernonia/core/dist/widgets/PrintSnapshot';
 import '@vernonia/core/dist/widgets/Snapshot.css';
 
+import NewWidget from './widgets/NewWidget';
+
 // config portal and auth
 esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
+
+const layer = new FeatureLayer({
+  portalItem: {
+    id: '5e1e805849ac407a8c34945c781c1d54',
+  },
+});
 
 // view
 const view = new MapView({
@@ -30,13 +38,7 @@ const view = new MapView({
         id: '6e9f78f3a26f48c89575941141fd4ac3',
       },
     }),
-    layers: [
-      new FeatureLayer({
-        portalItem: {
-          id: '5e1e805849ac407a8c34945c781c1d54',
-        },
-      }),
-    ],
+    layers: [layer],
     ground: 'world-elevation',
   }),
   zoom: 15,
@@ -73,6 +75,12 @@ new MapApplication({
       widget: new PrintSnapshot({ view, printServiceUrl: '' }),
       text: 'Print',
       icon: 'print',
+      type: 'calcite-panel',
+    },
+    {
+      widget: new NewWidget({ view, layer }),
+      text: 'View',
+      icon: 'map-space',
       type: 'calcite-panel',
     },
   ],
