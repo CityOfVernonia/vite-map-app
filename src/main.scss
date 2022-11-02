@@ -119,6 +119,18 @@ body {
   }
 }
 
+.esri-widget__table tr th {
+  border-right: 3px solid rgba($brand-dark, 0.05);
+}
+
+.esri-widget__table tr:nth-child(odd) {
+  background-color: rgba($brand-dark, 0.1);
+}
+
+.esri-widget__table tr:nth-child(even) {
+  background-color: rgba($brand, 0.02);
+}
+
 /////////////////////////
 // map application styles
 /////////////////////////
