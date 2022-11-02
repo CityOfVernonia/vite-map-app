@@ -1,0 +1,39 @@
+.street-info {
+  table {
+    background-color: transparent;
+    box-shadow: 0 4px 8px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);;
+  }
+}
+
+.street-info_content {
+  padding: 0.5rem;
+}
+
+.street-layers_content {
+  padding: 0.75rem;
+}
+
+.street-layers {
+  .esri-legend {
+    background-color: transparent;
+  }
+
+  .esri-legend__service {
+    padding: 0;
+  }
+
+  .esri-legend__service-label {
+    display: none;
+  }
+
+  .esri-legend__layer,
+  .esri-legend__layer-body,
+  .esri-legend__layer-table,
+  .esri-legend__layer-child-table {
+    margin: 0;
+  }
+
+  .esri-legend__layer-caption {
+    display: none;
+  }
+}
