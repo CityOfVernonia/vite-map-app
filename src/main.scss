@@ -119,16 +119,42 @@ body {
   }
 }
 
+// popup
+.esri-popup__main-container {
+  border-radius: var(--calcite-border-radius);
+
+  .esri-popup__header-title {
+    font-size: var(--calcite-font-size-0);
+    font-weight: var(--calcite-font-weight-normal);
+    color: $brand-dark;
+  }
+
+  .esri-popup__button {
+    border-radius: var(--calcite-border-radius);
+    color: $brand-dark;
+  }
+
+  .esri-popup__navigation {
+    border-radius: var(--calcite-border-radius);
+  }
+}
+
+// table
+.esri-widget__table {
+  background-color: transparent;
+  border-radius: var(--calcite-border-radius);
+}
+
 .esri-widget__table tr th {
-  border-right: 3px solid rgba($brand-dark, 0.05);
+  border-right: 3px solid rgba($brand, 0.125);
 }
 
 .esri-widget__table tr:nth-child(odd) {
-  background-color: rgba($brand-dark, 0.1);
+  background-color: rgba($brand, 0.05);
 }
 
 .esri-widget__table tr:nth-child(even) {
-  background-color: rgba($brand, 0.02);
+  background-color: rgba($color: #FFFFFF, $alpha: 0) !important;
 }
 
 /////////////////////////
