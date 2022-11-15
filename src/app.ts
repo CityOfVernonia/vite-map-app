@@ -14,10 +14,7 @@ import MapApplication from '@vernonia/map-application/dist/MapApplication';
 
 // widgets
 import Measure from '@vernonia/core/dist/widgets/Measure';
-import '@vernonia/core/dist/widgets/Measure.css';
-
 import PrintSnapshot from '@vernonia/core/dist/widgets/PrintSnapshot';
-import '@vernonia/core/dist/widgets/Snapshot.css';
 
 // config portal and auth
 esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
@@ -44,6 +41,8 @@ const load = async () => {
     }),
     extent: cityLimits.fullExtent,
     constraints: {
+      geometry: cityLimits.fullExtent.clone().expand(3),
+      minScale: 40000,
       rotationEnabled: false,
     },
     popup: {

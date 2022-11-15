@@ -161,3 +161,8 @@ body {
 // map application styles
 /////////////////////////
 @import "@vernonia/map-application/src/MapApplication.scss";
+
+/////////////////////////
+// widgets
+/////////////////////////
+@import"@vernonia/core/dist/widgets/Measure.css";
