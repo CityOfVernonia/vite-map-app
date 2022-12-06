@@ -24,31 +24,31 @@
     "@types/luxon": "^3.1.0",
     "@types/page": "^1.11.5",
     "@types/papaparse": "^5.3.5",
-    "@types/tabulator-tables": "^5.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "@typescript-eslint/parser": "^5.43.0",
+    "@types/tabulator-tables": "^5.4.2",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
     "ansi-regex": ">=6.0.1",
-    "eslint": "^8.27.0",
+    "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "fs-extra": "^10.1.0",
-    "prettier": "^2.7.1",
+    "fs-extra": "^11.1.0",
+    "prettier": "^2.8.0",
     "replace-in-file": "^6.3.5",
     "sass": "^1.56.1",
     "tslib": "^2.4.1",
-    "typescript": "^4.8.4",
+    "typescript": "^4.9.3",
     "vite": "3.0.4",
-    "vite-plugin-ejs": "^1.6.2"
+    "vite-plugin-ejs": "^1.6.4"
   },
   "dependencies": {
-    "@arcgis/core": "^4.25.2",
+    "@arcgis/core": "^4.25.5",
     "@esri/calcite-components": "^1.0.0-beta.98",
-    "@vernonia/core": "^2.1.7",
+    "@vernonia/core": "^2.1.11",
     "@vernonia/map-application": "^1.0.5",
-    "luxon": "^3.1.0",
+    "luxon": "^3.1.1",
     "page": "^1.11.6",
     "papaparse": "^5.3.2",
-    "tabulator-tables": "^5.4.2"
+    "tabulator-tables": "^5.4.3"
   },
   "eslintConfig": {
     "env": {
