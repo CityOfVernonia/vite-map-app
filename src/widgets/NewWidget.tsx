@@ -19,6 +19,14 @@ export default class NewWidget extends Widget {
     super(properties);
   }
 
+  postInitialize(): void {
+    this.own(
+      this.watch('state', (state: 'scale' | 'zoom'): void => {
+        console.log(state);
+      }),
+    );
+  }
+
   @property()
   view!: esri.MapView;
 

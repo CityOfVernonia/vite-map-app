@@ -16,6 +16,8 @@ import MapApplication from '@vernonia/map-application/dist/MapApplication';
 import Measure from '@vernonia/core/dist/widgets/Measure';
 import PrintSnapshot from '@vernonia/core/dist/widgets/PrintSnapshot';
 
+import NewWidget from './widgets/NewWidget';
+
 // config portal and auth
 esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
 
@@ -64,6 +66,13 @@ const load = async () => {
     }),
     panelPosition: 'end',
     panelWidgets: [
+      {
+        widget: new NewWidget({ view, layer: cityLimits }),
+        text: 'New',
+        icon: 'plus',
+        type: 'calcite-panel',
+        open: true,
+      },
       {
         widget: new Measure({ view }),
         text: 'Measure',
