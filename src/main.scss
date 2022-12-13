@@ -18,7 +18,10 @@ $font-family: "Roboto", sans-serif;
 // js api
 /////////
 
-// esri widgets to include
+// exclude all esri widget styles by default
+@import "esri-widgets";
+
+// esri widget styles to include
 $include_Attribution: true;
 $include_BasemapToggle: true;
 $include_LayerList: true;
