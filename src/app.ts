@@ -3,13 +3,11 @@ import './main.scss';
 // esri config and auth
 import esriConfig from '@arcgis/core/config';
 
-// map, view and layers
+// map and view
 import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
-import Basemap from '@arcgis/core/Basemap';
-import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
-import SearchViewModel from '@arcgis/core/widgets/Search/SearchViewModel';
 
+// application
 import MapApplication from '@vernonia/map-application/dist/MapApplication';
 
 // widgets
@@ -22,28 +20,20 @@ import NewWidget from './widgets/NewWidget';
 esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
 
 const load = async () => {
-  const cityLimits = new FeatureLayer({
-    portalItem: {
-      id: '5e1e805849ac407a8c34945c781c1d54',
-    },
-  });
-
-  await cityLimits.load();
+  // layers and friends
+  const { extents, hillshadeBasemap, hybridBasemap, cityLimits, taxLots, searchViewModel } = await import('./layers');
+  const { extent, constraintGeometry } = await extents();
 
   // view
   const view = new MapView({
     map: new Map({
-      basemap: new Basemap({
-        portalItem: {
-          id: '6e9f78f3a26f48c89575941141fd4ac3',
-        },
-      }),
-      layers: [cityLimits],
+      basemap: hillshadeBasemap,
+      layers: [taxLots, cityLimits],
       ground: 'world-elevation',
     }),
-    extent: cityLimits.fullExtent,
+    extent,
     constraints: {
-      geometry: cityLimits.fullExtent.clone().expand(3),
+      geometry: constraintGeometry,
       minScale: 40000,
       rotationEnabled: false,
     },
@@ -56,14 +46,11 @@ const load = async () => {
     },
   });
 
+  // application
   new MapApplication({
     contentBehind: true,
     title: 'Vite Map App',
-    nextBasemap: new Basemap({
-      portalItem: {
-        id: '2622b9aecacd401583981410e07d5bb9',
-      },
-    }),
+    nextBasemap: hybridBasemap,
     panelPosition: 'end',
     panelWidgets: [
       {
@@ -86,7 +73,7 @@ const load = async () => {
         type: 'calcite-panel',
       },
     ],
-    searchViewModel: new SearchViewModel({ view }),
+    searchViewModel,
     view,
   });
 
