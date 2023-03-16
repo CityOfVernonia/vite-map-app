@@ -21,7 +21,9 @@ esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
 
 const load = async () => {
   // layers and friends
-  const { extents, hillshadeBasemap, hybridBasemap, cityLimits, taxLots, searchViewModel } = await import('./layers');
+  const { extents, hillshadeBasemap, hybridBasemap, cityLimits, taxLots, whenView, searchViewModel } = await import(
+    './layers'
+  );
   const { extent, constraintGeometry } = await extents();
 
   // view
@@ -45,6 +47,8 @@ const load = async () => {
       },
     },
   });
+
+  view.when(whenView);
 
   // application
   new MapApplication({
@@ -76,8 +80,6 @@ const load = async () => {
     searchViewModel,
     view,
   });
-
-  // view.when(() => { });
 };
 
 load();

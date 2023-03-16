@@ -91,14 +91,6 @@ export const taxLots = new FeatureLayer({
   }),
 });
 
-taxLots.when((): void => {
-  const tlr = taxLots.renderer as esri.SimpleRenderer;
-  const tls = tlr.symbol as esri.SimpleFillSymbol;
-  hybridBasemap.watch('visible', (visible: boolean): void => {
-    tls.outline.color = visible ? new Color([246, 213, 109, 0.5]) : new Color([152, 114, 11, 0.5]);
-  });
-});
-
 // default tax lot search
 export const searchViewModel = new SearchViewModel({
   searchAllEnabled: false,
@@ -151,4 +143,18 @@ export const extents = async (): Promise<{ extent: esri.Extent; constraintGeomet
     extent,
     constraintGeometry: extent.clone().expand(3),
   };
+};
+
+/**
+ * Anything layer related to perform after view.
+ * @param view
+ */
+export const whenView = (view: esri.MapView): void => {
+  taxLots.when((): void => {
+    const tlr = taxLots.renderer as esri.SimpleRenderer;
+    const tls = tlr.symbol as esri.SimpleFillSymbol;
+    view.map.watch('basemap', (basemap: esri.Basemap): void => {
+      tls.outline.color = basemap === hybridBasemap ? new Color([246, 213, 109, 0.5]) : new Color([152, 114, 11, 0.5]);
+    });
+  });
 };
