@@ -79,6 +79,11 @@ const load = async () => {
     ],
     searchViewModel,
     view,
+    viewControlOptions: {
+      includeLocate: true,
+      includeFullscreen: true,
+      includeMagnifier: true,
+    },
   });
 };
 
