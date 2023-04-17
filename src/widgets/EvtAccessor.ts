@@ -1,4 +1,5 @@
 import esri = __esri;
+import type Accessor from '@arcgis/core/core/Accessor';
 import { subclass, property } from '@arcgis/core/core/accessorSupport/decorators';
 import Evented from '@arcgis/core/core/Evented';
 
@@ -11,11 +12,11 @@ const _E = Evented.EventedAccessor;
 @subclass('EvtAccessor')
 export default class EvtAccessor extends _E {
   // type evented methods
-  on!: (type: string | string[], listener: esri.EventHandler) => IHandle;
+  addHandles!: Accessor['addHandles'];
   emit!: (type: string, event?: any) => boolean;
-  // type `own` b/c it would be typed
-  // NOTE: type `addHandles`, etc when typed
-  own!: (handle: IHandle) => boolean;
+  hasEventListener!: (type: string) => boolean;
+  hasHandles!: Accessor['hasHandles'];
+  on!: (type: string | string[], listener: esri.EventHandler) => IHandle;
 
   constructor(properties?: { view: esri.MapView }) {
     super(properties);

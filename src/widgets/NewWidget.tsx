@@ -20,7 +20,7 @@ export default class NewWidget extends Widget {
   }
 
   postInitialize(): void {
-    this.own(
+    this.addHandles(
       this.watch('state', (state: 'scale' | 'zoom'): void => {
         console.log(state);
       }),
