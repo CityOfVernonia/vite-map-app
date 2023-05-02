@@ -1,10 +1,10 @@
 import esri = __esri;
 import Basemap from '@arcgis/core/Basemap';
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
-import PopupTemplate from '@arcgis/core/PopupTemplate';
 import Color from '@arcgis/core/Color';
 import SearchViewModel from '@arcgis/core/widgets/Search/SearchViewModel';
 import LayerSearchSource from '@arcgis/core/widgets/Search/LayerSearchSource';
+import taxLotPopup from '@vernonia/core/dist/popups/TaxLotPopup';
 
 // basemaps
 export const hillshadeBasemap = new Basemap({
@@ -31,64 +31,7 @@ export const taxLots = new FeatureLayer({
     id: 'a0837699982f41e6b3eb92429ecdb694',
   },
   outFields: ['*'],
-  popupTemplate: new PopupTemplate({
-    title: '{TAXLOT_ID}',
-    content: (event: { graphic: esri.Graphic }): HTMLElement => {
-      const { TAXLOT_ID, ACCOUNT_IDS, TAXMAP, ADDRESS, OWNER, ACRES, SQ_FEET } = event.graphic.attributes;
-
-      const address = ADDRESS
-        ? `
-        <tr>
-          <th>Address (Primary Situs)</th>
-          <td>${ADDRESS}</td>
-        </tr>
-      `
-        : '';
-
-      const accounts = ACCOUNT_IDS.split(',').map((account: string): string => {
-        return `
-          <calcite-link href="https://propertyquery.columbiacountyor.gov/columbiaat/MainQueryDetails.aspx?AccountID=${account}&QueryYear=2023&Roll=R" target="_blank">${account}</calcite-link>
-        `;
-      });
-
-      const taxLotUrl = location.hostname === 'localhost' ? `/tax-lot/?id=${TAXLOT_ID}` : `/tax-lot/${TAXLOT_ID}/`;
-
-      const el = new DOMParser().parseFromString(
-        `<table class="esri-widget__table">
-          <tr>
-            <th>Tax lot</th>
-            <td>
-              <calcite-link href=${taxLotUrl} target="_blank">${TAXLOT_ID}</calcite-link>
-            </td>
-          </tr>
-          <tr>
-            <th>Tax map</th>
-            <td>
-              <calcite-link href="https://gis.columbiacountymaps.com/TaxMaps/${TAXMAP}.pdf" target="_blank">${TAXMAP}</calcite-link>
-            </td>
-          </tr>
-          <tr>
-            <th>Owner</th>
-            <td>${OWNER}</td>
-          </tr>
-          ${address}
-          <tr>
-            <th>Area</th>
-            <td>${ACRES} acres&nbsp;&nbsp;${(SQ_FEET as number).toLocaleString()} sq ft</td>
-          </tr>
-          <tr>
-            <th>Tax account(s)</th>
-            <td>
-              ${accounts.join('&nbsp;')}
-            </td>
-          </tr>
-        </table>`,
-        'text/html',
-      );
-
-      return el.body.firstChild as HTMLTableElement;
-    },
-  }),
+  popupTemplate: taxLotPopup,
 });
 
 // default tax lot search
