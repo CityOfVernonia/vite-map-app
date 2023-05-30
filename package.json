@@ -5,7 +5,7 @@
     "build": "vite build",
     "dev": "vite",
     "lint": "eslint . --ext .ts,.tsx",
-    "postinstall": "node ./scripts/sass-replace.js",
+    "postinstall": "node ./scripts/postinstall.js",
     "prettier": "prettier --write \"src/**/*.ts?(x)\"",
     "serve": "vite preview",
     "test": "npm run prettier && npm run lint"
@@ -31,13 +31,13 @@
     "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "fs-extra": "^11.1.1",
     "prettier": "^2.8.8",
     "replace-in-file": "^7.0.1",
     "sass": "^1.62.1",
     "tslib": "^2.5.2",
     "typescript": "^5.0.4",
-    "vite": "4.3.9",
-    "vite-plugin-ejs": "^1.6.4"
+    "vite": "4.3.9"
   },
   "dependencies": {
     "@arcgis/core": "^4.26.5",
