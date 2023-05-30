@@ -1,26 +1,15 @@
 const replace = require('replace-in-file');
 
-// try {
-//   const results = replace.sync({
-//     files: 'node_modules/@arcgis/core/assets/esri/themes/base/_core.scss',
-//     from: '$icomoon-font-path: "../base/icons/fonts";',
-//     to: '$icomoon-font-path: "../base/icons/fonts" !default;',
-//   });
-//   console.log(results);
-// } catch (error) {
-//   console.error(error);
-// }
-
-// try {
-//   const results = replace.sync({
-//     files: 'node_modules/@arcgis/core/assets/esri/themes/base/_core.scss',
-//     from: '$calcite-fonts-path: "../base/fonts/fonts/";',
-//     to: '$calcite-fonts-path: "../base/fonts/fonts/" !default;',
-//   });
-//   console.log(results);
-// } catch (error) {
-//   console.error(error);
-// }
+try {
+  const results = replace.sync({
+    files: 'node_modules/@arcgis/core/assets/esri/themes/base/_core.scss',
+    from: '@import "@esri/calcite-components/dist/calcite/calcite";',
+    to: '// @import "@esri/calcite-components/dist/calcite/calcite";',
+  });
+  console.log(results);
+} catch (error) {
+  console.error(error);
+}
 
 try {
   const results = replace.sync({

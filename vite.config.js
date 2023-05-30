@@ -4,12 +4,14 @@ import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import _package from './package.json';
 
 const calciteVersion = _package.dependencies['@esri/calcite-components'].replace('^', '').replace('~', '');
-const calciteUrl = `https://js.arcgis.com/calcite-components/${calciteVersion}/calcite.esm.js`;
+const calciteEsm = `https://js.arcgis.com/calcite-components/${calciteVersion}/calcite.esm.js`;
+const calciteCss = `https://js.arcgis.com/calcite-components/${calciteVersion}/calcite.css`;
 
 export default {
   plugins: [
     ViteEjsPlugin({
-      calciteUrl,
+      calciteEsm,
+      calciteCss,
     }),
   ],
 
