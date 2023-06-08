@@ -1,6 +1,8 @@
-const path = require('path');
-const fs = require('fs-extra');
-const replace = require('replace-in-file');
+import * as url from 'url';
+import path from 'path';
+import fs from 'fs-extra'
+import replace from 'replace-in-file';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 async function copyCalcite() {
   const src = path.resolve(__dirname, './../node_modules/@esri/calcite-components/dist/calcite');
@@ -50,7 +52,3 @@ try {
 } catch (error) {
   console.error(error);
 }
-
-// TODO: Legend widget
-
-// TODO: Bookmark widget
