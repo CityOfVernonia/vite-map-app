@@ -1,6 +1,7 @@
 // https://vitejs.dev/config/
 // import { resolve } from 'path';
-import _package from './package.json';
+// import * as url from 'url';
+// const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 export default {
   // where's the source

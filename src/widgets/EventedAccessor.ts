@@ -9,8 +9,8 @@ const _E = Evented.EventedAccessor;
 /**
  * Template class of evented accessor.
  */
-@subclass('EvtAccessor')
-export default class EvtAccessor extends _E {
+@subclass('EventedAccessor')
+export default class EventedAccessor extends _E {
   // type evented methods
   addHandles!: Accessor['addHandles'];
   emit!: (type: string, event?: any) => boolean;

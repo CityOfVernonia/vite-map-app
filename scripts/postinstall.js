@@ -1,6 +1,6 @@
 import * as url from 'url';
 import path from 'path';
-import fs from 'fs-extra'
+import fs from 'fs-extra';
 import replace from 'replace-in-file';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
