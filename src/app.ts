@@ -15,22 +15,22 @@ import Measure from '@vernonia/core/dist/widgets/Measure';
 import PrintSnapshot from '@vernonia/core/dist/widgets/PrintSnapshot';
 
 import NewWidget from './widgets/NewWidget';
+import NewFeatureLayerWidget from './widgets/NewFeatureLayerWidget';
 
 // config portal and auth
 esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
 
 const load = async () => {
   // layers and friends
-  const { extents, hillshadeBasemap, hybridBasemap, cityLimits, taxLots, whenView, searchViewModel } = await import(
-    './layers'
-  );
+  const { extents, hillshadeBasemap, hybridBasemap, cityLimits, taxLots, featureLayer, whenView, searchViewModel } =
+    await import('./layers');
   const { extent, constraintGeometry } = await extents();
 
   // view
   const view = new MapView({
     map: new Map({
       basemap: hillshadeBasemap,
-      layers: [taxLots, cityLimits],
+      layers: [taxLots, cityLimits, featureLayer],
       ground: 'world-elevation',
     }),
     extent,
@@ -63,6 +63,13 @@ const load = async () => {
         icon: 'plus',
         type: 'calcite-panel',
         open: true,
+      },
+      {
+        widget: new NewFeatureLayerWidget({ view, layer: featureLayer }),
+        text: 'Feature Layer',
+        icon: 'feature-layer',
+        type: 'calcite-panel',
+        groupEnd: true,
       },
       {
         widget: new Measure({ view }),

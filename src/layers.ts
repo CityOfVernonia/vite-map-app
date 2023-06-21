@@ -34,6 +34,13 @@ export const taxLots = new FeatureLayer({
   popupTemplate: taxLotPopup,
 });
 
+export const featureLayer = new FeatureLayer({
+  url: 'https://gis.vernonia-or.gov/server/rest/services/UtilityMapping/Water/MapServer/0',
+  outFields: ['*'],
+  popupEnabled: false,
+  title: 'Fire Hydrants',
+});
+
 // default tax lot search
 export const searchViewModel = new SearchViewModel({
   searchAllEnabled: false,
