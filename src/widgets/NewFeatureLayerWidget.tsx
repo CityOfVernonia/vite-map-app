@@ -39,7 +39,7 @@ export default class NewFeatureLayerWidget extends Widget {
       view: { popup },
     } = this;
     this._queryHandle = view.on('click', this._clickEvent.bind(this));
-    popup.clear();
+    if (popup.clear && typeof popup.clear === 'function') popup.clear();
     popup.close();
   }
 
