@@ -41,7 +41,7 @@
     "vite": "4.3.9"
   },
   "dependencies": {
-    "@arcgis/core": "^4.27.4",
+    "@arcgis/core": "^4.27.5",
     "@esri/calcite-components": "^1.4.2",
     "@vernonia/core": "^2.2.0",
     "@vernonia/map-application": "^1.0.18",
