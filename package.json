@@ -44,7 +44,7 @@
     "@arcgis/core": "^4.27.6",
     "@esri/calcite-components": "^1.4.3",
     "@vernonia/core": "^2.2.1",
-    "@vernonia/map-application": "^1.0.19",
+    "@vernonia/map-application": "^1.0.21",
     "luxon": "^3.3.0",
     "page": "^1.11.6",
     "papaparse": "^5.4.1",
