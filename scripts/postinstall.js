@@ -4,6 +4,22 @@ import fs from 'fs-extra';
 import replace from 'replace-in-file';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
+async function copyAssets() {
+  const src = path.resolve(__dirname, './../node_modules/@arcgis/core/assets');
+  const dest = path.resolve(__dirname, './../src/public/core/assets');
+  if (!src) {
+    console.log('@argis/core must be installed');
+    return;
+  }
+  if (dest) {
+    await fs.remove(dest);
+  }
+  await fs.ensureDir(dest);
+  fs.copy(src, dest);
+}
+
+copyAssets();
+
 async function copyCalcite() {
   const src = path.resolve(__dirname, './../node_modules/@esri/calcite-components/dist/calcite');
   const dest = path.resolve(__dirname, './../src/public/calcite');

@@ -19,6 +19,7 @@ import NewFeatureLayerWidget from './widgets/NewFeatureLayerWidget';
 
 // config portal and auth
 esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
+esriConfig.assetsPath = './core/assets';
 
 const load = async () => {
   // layers and friends
