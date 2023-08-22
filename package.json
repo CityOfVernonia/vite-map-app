@@ -23,32 +23,27 @@
   "homepage": "https://github.com/COV-GIS/vite-map-app#readme",
   "devDependencies": {
     "@types/luxon": "^3.3.1",
-    "@types/page": "^1.11.6",
-    "@types/papaparse": "^5.3.7",
-    "@types/tabulator-tables": "^5.4.10",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
+    "@types/papaparse": "^5.3.8",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "ansi-regex": ">=6.0.1",
-    "eslint": "^8.46.0",
+    "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "fs-extra": "^11.1.1",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
     "replace-in-file": "^7.0.1",
-    "sass": "^1.64.2",
-    "tslib": "^2.6.1",
+    "sass": "^1.66.1",
+    "tslib": "^2.6.2",
     "typescript": "^5.1.6",
     "vite": "4.4.9"
   },
   "dependencies": {
     "@arcgis/core": "^4.27.6",
-    "@esri/calcite-components": "^1.5.0",
-    "@vernonia/core": "^2.2.8",
-    "@vernonia/map-application": "^1.0.25",
-    "luxon": "^3.3.0",
-    "page": "^1.11.6",
-    "papaparse": "^5.4.1",
-    "tabulator-tables": "^5.5.1"
+    "@esri/calcite-components": "^1.6.1",
+    "@vernonia/core": "^3.0.1",
+    "luxon": "^3.4.0",
+    "papaparse": "^5.4.1"
   },
   "eslintConfig": {
     "env": {

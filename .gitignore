@@ -1,4 +1,4 @@
-node_modules
 dist
+node_modules
+src/public/arcgis
 src/public/calcite
-src/public/core

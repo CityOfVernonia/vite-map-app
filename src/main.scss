@@ -1,37 +1,17 @@
 ///////////////////////////////////////////////////
 // vernonia brand colors and variables
 ///////////////////////////////////////////////////
-@import "@vernonia/map-application/src/variables";
+// @import "@vernonia/map-application/src/variables";
 
-/////////
-// js api
-/////////
+////////////////////////////////////
+/// import css for vernonia defaults
+////////////////////////////////////
 
-// exclude all esri widget styles by default
-@import "esri-widgets";
-
-// esri widget styles to include
-$include_Attribution: true;
-$include_BasemapToggle: true;
-$include_LayerList: true;
-$include_Legend: true;
-$include_Popup: true;
-$include_Search: true;
-
-// @arcgis/core font paths for vite to resolve
-$icomoon-font-path: "@arcgis/core/assets/esri/themes/base/icons/fonts/";
-$calcite-fonts-path: "@arcgis/core/assets/esri/themes/base/fonts/fonts/";
-
-// @arcgis/core sass
-@import "@arcgis/core/assets/esri/themes/base/core";
-
-//////////////////////////////////
-// map application styles
-// compiled dist css has issues???
-//////////////////////////////////
-@import "@vernonia/map-application/src/MapApplication.scss";
-
-/////////////////////////
-// widgets
-/////////////////////////
+@import "@vernonia/core/dist/layouts/ShellApplicationMap.css";
 @import "@vernonia/core/dist/widgets/Measure.css";
+
+//////////////////////////////////
+/// import scss for custom theming
+//////////////////////////////////
+
+// @import "./../src/widgets/SurveySearch.scss";

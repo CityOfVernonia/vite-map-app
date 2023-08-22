@@ -6,7 +6,7 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 async function copyAssets() {
   const src = path.resolve(__dirname, './../node_modules/@arcgis/core/assets');
-  const dest = path.resolve(__dirname, './../src/public/core/assets');
+  const dest = path.resolve(__dirname, './../src/public/arcgis');
   if (!src) {
     console.log('@argis/core must be installed');
     return;

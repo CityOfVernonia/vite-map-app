@@ -19,13 +19,6 @@ export const hybridBasemap = new Basemap({
   },
 });
 
-// layers
-export const cityLimits = new FeatureLayer({
-  portalItem: {
-    id: '5e1e805849ac407a8c34945c781c1d54',
-  },
-});
-
 export const taxLots = new FeatureLayer({
   portalItem: {
     id: 'a0837699982f41e6b3eb92429ecdb694',
@@ -81,19 +74,6 @@ export const searchViewModel = new SearchViewModel({
     }),
   ],
 });
-
-/**
- * Return extents for view.
- * @returns extent and constraint geometry
- */
-export const extents = async (): Promise<{ extent: esri.Extent; constraintGeometry: esri.Extent }> => {
-  await cityLimits.load();
-  const extent = cityLimits.fullExtent.clone();
-  return {
-    extent,
-    constraintGeometry: extent.clone().expand(3),
-  };
-};
 
 /**
  * Anything layer related to perform after view.

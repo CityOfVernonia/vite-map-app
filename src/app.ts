@@ -8,7 +8,8 @@ import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 
 // application
-import MapApplication from '@vernonia/map-application/dist/MapApplication';
+import ShellApplicationMap from '@vernonia/core/dist/layouts/ShellApplicationMap';
+import cityBoundaryExtents from '@vernonia/core/dist/support/cityBoundaryExtents';
 
 // widgets
 import Measure from '@vernonia/core/dist/widgets/Measure';
@@ -19,13 +20,15 @@ import NewFeatureLayerWidget from './widgets/NewFeatureLayerWidget';
 
 // config portal and auth
 esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
-esriConfig.assetsPath = './core/assets';
+esriConfig.assetsPath = './arcgis';
 
 const load = async () => {
   // layers and friends
-  const { extents, hillshadeBasemap, hybridBasemap, cityLimits, taxLots, featureLayer, whenView, searchViewModel } =
-    await import('./layers');
-  const { extent, constraintGeometry } = await extents();
+  const { hillshadeBasemap, hybridBasemap, taxLots, featureLayer, whenView, searchViewModel } = await import(
+    './layers'
+  );
+
+  const { cityLimits, extent, constraintExtent } = await cityBoundaryExtents('5e1e805849ac407a8c34945c781c1d54');
 
   // view
   const view = new MapView({
@@ -36,7 +39,7 @@ const load = async () => {
     }),
     extent,
     constraints: {
-      geometry: constraintGeometry,
+      geometry: constraintExtent,
       minScale: 40000,
       rotationEnabled: false,
     },
@@ -52,9 +55,8 @@ const load = async () => {
   view.when(whenView);
 
   // application
-  new MapApplication({
-    contentBehind: true,
-    title: 'Vite Map App',
+  new ShellApplicationMap({
+    headerOptions: { searchViewModel },
     nextBasemap: hybridBasemap,
     panelPosition: 'end',
     panelWidgets: [
@@ -85,12 +87,11 @@ const load = async () => {
         type: 'calcite-panel',
       },
     ],
-    searchViewModel,
+    title: 'Vite Map App',
     view,
     viewControlOptions: {
       includeLocate: true,
       includeFullscreen: true,
-      includeMagnifier: true,
     },
   });
 };
