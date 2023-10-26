@@ -32,13 +32,13 @@
     "eslint-plugin-prettier": "^5.0.1",
     "fs-extra": "^11.1.1",
     "prettier": "^3.0.3",
-    "sass": "^1.69.4",
+    "sass": "^1.69.5",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "vite": "4.5.0"
   },
   "dependencies": {
-    "@arcgis/core": "^4.28.1",
+    "@arcgis/core": "^4.28.2",
     "@esri/calcite-components": "^1.9.2",
     "@vernonia/core": "^3.0.9",
     "luxon": "^3.4.3",
