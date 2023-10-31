@@ -24,8 +24,8 @@
   "devDependencies": {
     "@types/luxon": "^3.3.3",
     "@types/papaparse": "^5.3.10",
-    "@typescript-eslint/eslint-plugin": "^6.9.0",
-    "@typescript-eslint/parser": "^6.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
     "ansi-regex": ">=6.0.1",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
@@ -38,9 +38,9 @@
     "vite": "4.5.0"
   },
   "dependencies": {
-    "@arcgis/core": "^4.28.2",
-    "@esri/calcite-components": "^1.9.2",
-    "@vernonia/core": "^3.0.9",
+    "@arcgis/core": "^4.28.5",
+    "@esri/calcite-components": "^1.10.0",
+    "@vernonia/core": "^3.0.13",
     "luxon": "^3.4.3",
     "papaparse": "^5.4.1"
   },
