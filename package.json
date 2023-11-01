@@ -38,9 +38,9 @@
     "vite": "4.5.0"
   },
   "dependencies": {
-    "@arcgis/core": "^4.28.5",
+    "@arcgis/core": "^4.28.6",
     "@esri/calcite-components": "^1.10.0",
-    "@vernonia/core": "^3.0.13",
+    "@vernonia/core": "^3.0.14",
     "luxon": "^3.4.3",
     "papaparse": "^5.4.1"
   },
