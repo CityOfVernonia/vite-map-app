@@ -3,7 +3,7 @@ import type Accessor from '@arcgis/core/core/Accessor';
 import { subclass, property } from '@arcgis/core/core/accessorSupport/decorators';
 import Evented from '@arcgis/core/core/Evented';
 
-// @ts-ignore
+// @ts-expect-error EventedAccessor is not typed
 const _E = Evented.EventedAccessor;
 
 /**
