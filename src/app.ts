@@ -16,7 +16,7 @@ import LayerSearchSource from '@arcgis/core/widgets/Search/LayerSearchSource';
 import taxLotPopup from '@vernonia/core/dist/popups/TaxLotPopup';
 
 // application
-import ShellApplicationMap from '@vernonia/core/dist/layouts/ShellApplicationMap';
+import MapApplication from '@vernonia/core/dist/layouts/MapApplication';
 import cityBoundaryExtents from '@vernonia/core/dist/support/cityBoundaryExtents';
 
 // widgets
@@ -31,7 +31,6 @@ esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
 esriConfig.assetsPath = './arcgis';
 
 const load = async () => {
-  // layers
   const { cityLimits, extent, constraintExtent } = await cityBoundaryExtents('5e1e805849ac407a8c34945c781c1d54');
 
   const hillshadeBasemap = new Basemap({
@@ -69,7 +68,6 @@ const load = async () => {
     title: 'Fire Hydrants',
   });
 
-  // view
   const view = new MapView({
     map: new Map({
       basemap: hillshadeBasemap,
@@ -91,86 +89,104 @@ const load = async () => {
     },
   });
 
-  // application
-  new ShellApplicationMap({
-    headerOptions: {
-      searchViewModel: new SearchViewModel({
-        view,
-        searchAllEnabled: false,
-        includeDefaultSources: false,
-        locationEnabled: false,
-        sources: [
-          new LayerSearchSource({
-            layer: taxLots,
-            outFields: ['*'],
-            searchFields: ['ADDRESS'],
-            suggestionTemplate: '{ADDRESS}',
-            placeholder: 'Tax lot by address',
-            name: 'Tax lot by address',
-          }),
-          new LayerSearchSource({
-            layer: taxLots,
-            outFields: ['*'],
-            searchFields: ['OWNER'],
-            suggestionTemplate: '{OWNER}',
-            placeholder: 'Tax lot by owner',
-            name: 'Tax lot by owner',
-          }),
-          new LayerSearchSource({
-            layer: taxLots,
-            outFields: ['*'],
-            searchFields: ['ACCOUNT_IDS'],
-            suggestionTemplate: '{ACCOUNT_IDS}',
-            placeholder: 'Tax lot by tax account',
-            name: 'Tax lot by tax account',
-          }),
-          new LayerSearchSource({
-            layer: taxLots,
-            outFields: ['*'],
-            searchFields: ['TAXLOT_ID'],
-            suggestionTemplate: '{TAXLOT_ID}',
-            placeholder: 'Tax lot by map and lot',
-            name: 'Tax lot by map and lot',
-          }),
-        ],
+  const searchViewModel = new SearchViewModel({
+    view,
+    searchAllEnabled: false,
+    includeDefaultSources: false,
+    locationEnabled: false,
+    sources: [
+      new LayerSearchSource({
+        layer: taxLots,
+        outFields: ['*'],
+        searchFields: ['ADDRESS'],
+        suggestionTemplate: '{ADDRESS}',
+        placeholder: 'Tax lot by address',
+        name: 'Tax lot by address',
       }),
+      new LayerSearchSource({
+        layer: taxLots,
+        outFields: ['*'],
+        searchFields: ['OWNER'],
+        suggestionTemplate: '{OWNER}',
+        placeholder: 'Tax lot by owner',
+        name: 'Tax lot by owner',
+      }),
+      new LayerSearchSource({
+        layer: taxLots,
+        outFields: ['*'],
+        searchFields: ['ACCOUNT_IDS'],
+        suggestionTemplate: '{ACCOUNT_IDS}',
+        placeholder: 'Tax lot by tax account',
+        name: 'Tax lot by tax account',
+      }),
+      new LayerSearchSource({
+        layer: taxLots,
+        outFields: ['*'],
+        searchFields: ['TAXLOT_ID'],
+        suggestionTemplate: '{TAXLOT_ID}',
+        placeholder: 'Tax lot by map and lot',
+        name: 'Tax lot by map and lot',
+      }),
+    ],
+  });
+
+  const newWidget = new NewWidget({ view, layer: cityLimits });
+
+  const mapApplication = new MapApplication({
+    endWidgetInfo: {
+      icon: 'lightbulb',
+      text: 'About',
+      type: 'panel',
+      widget: new PrintSnapshot({ view, printServiceUrl: '' }),
     },
     nextBasemap: hybridBasemap,
-    panelPosition: 'end',
-    panelWidgets: [
-      {
-        widget: new NewWidget({ view, layer: cityLimits }),
-        text: 'New',
-        icon: 'plus',
-        type: 'calcite-panel',
-        open: true,
-      },
-      {
-        widget: new NewFeatureLayerWidget({ view, layer: featureLayer }),
-        text: 'Feature Layer',
-        icon: 'feature-layer',
-        type: 'calcite-panel',
-        groupEnd: true,
-      },
-      {
-        widget: new Measure({ view }),
-        text: 'Measure',
-        icon: 'measure',
-        type: 'calcite-panel',
-      },
-      {
-        widget: new PrintSnapshot({ view, printServiceUrl: '' }),
-        text: 'Print',
-        icon: 'print',
-        type: 'calcite-panel',
-      },
-    ],
     title: 'Vite Map App',
+    searchViewModel,
     view,
     viewControlOptions: {
-      includeLocate: true,
       includeFullscreen: true,
+      includeLocate: true,
     },
+    widgetInfos: [
+      {
+        icon: 'plus',
+        text: 'New',
+        type: 'panel',
+        widget: newWidget,
+      },
+      {
+        groupEnd: true,
+        icon: 'feature-layer',
+        text: 'Feature Layer',
+        type: 'panel',
+        widget: new NewFeatureLayerWidget({ view, layer: featureLayer }),
+      },
+      {
+        icon: 'measure',
+        text: 'Measure',
+        type: 'panel',
+        widget: new Measure({ view }),
+      },
+      {
+        icon: 'print',
+        text: 'Text',
+        type: 'panel',
+        widget: new PrintSnapshot({ view, printServiceUrl: '' }),
+      },
+    ],
+  });
+
+  mapApplication.on('load', (): void => {
+    mapApplication.showWidget(newWidget.id);
+
+    setTimeout((): void => {
+      mapApplication.showAlert({
+        duration: 'fast',
+        label: 'template application',
+        message: 'This is a template application for City of Vernonia web maps.',
+        title: 'Vite Map App',
+      });
+    }, 5000);
   });
 };
 
