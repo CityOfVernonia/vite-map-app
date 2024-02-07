@@ -169,7 +169,7 @@ const load = async () => {
       },
       {
         icon: 'print',
-        text: 'Text',
+        text: 'Print',
         type: 'panel',
         widget: new PrintSnapshot({ view, printServiceUrl: '' }),
       },
