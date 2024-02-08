@@ -35,12 +35,13 @@
     "sass": "^1.70.0",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
-    "vite": "5.0.12"
+    "vite": "5.1.0"
   },
   "dependencies": {
     "@arcgis/core": "^4.28.10",
     "@esri/calcite-components": "^2.4.0",
-    "@vernonia/core": "^3.4.0",
+    "@esri/calcite-ui-icons": "^3.26.2",
+    "@vernonia/core": "^3.4.1",
     "luxon": "^3.4.4",
     "papaparse": "^5.4.1"
   },
