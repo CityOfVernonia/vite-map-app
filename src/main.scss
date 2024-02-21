@@ -8,10 +8,11 @@
 ////////////////////////////////////
 
 @import "@vernonia/core/dist/layouts/MapApplication.css";
-@import "@vernonia/core/dist/widgets/Measure.css";
+@import "@vernonia/core/dist/components/panels/Measure.css";
+@import "@vernonia/core/dist/components/panels/PrintSnapshot.css";
 
 //////////////////////////////////
 /// import scss for custom theming
 //////////////////////////////////
 
-// @import "./../src/widgets/SurveySearch.scss";
+// @import "./../src/components/panels/SurveySearch.scss";

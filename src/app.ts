@@ -20,8 +20,8 @@ import MapApplication from '@vernonia/core/dist/layouts/MapApplication';
 import cityBoundaryExtents from '@vernonia/core/dist/support/cityBoundaryExtents';
 
 // widgets
-import Measure from '@vernonia/core/dist/widgets/Measure';
-import PrintSnapshot from '@vernonia/core/dist/widgets/PrintSnapshot';
+import Measure from '@vernonia/core/dist/components/panels/Measure';
+import PrintSnapshot from '@vernonia/core/dist/components/panels/PrintSnapshot';
 
 import NewWidget from './widgets/NewWidget';
 import NewFeatureLayerWidget from './widgets/NewFeatureLayerWidget';
@@ -133,11 +133,11 @@ const load = async () => {
   const newWidget = new NewWidget({ view, layer: cityLimits });
 
   const mapApplication = new MapApplication({
-    endWidgetInfo: {
+    endShellPanelComponent: {
+      component: new PrintSnapshot({ view }),
       icon: 'lightbulb',
       text: 'About',
       type: 'panel',
-      widget: new PrintSnapshot({ view, printServiceUrl: '' }),
     },
     nextBasemap: hybridBasemap,
     title: 'Vite Map App',
@@ -147,31 +147,31 @@ const load = async () => {
       includeFullscreen: true,
       includeLocate: true,
     },
-    widgetInfos: [
+    shellPanelComponentInfos: [
       {
+        component: newWidget,
         icon: 'plus',
         text: 'New',
         type: 'panel',
-        widget: newWidget,
       },
       {
+        component: new NewFeatureLayerWidget({ view, layer: featureLayer }),
         groupEnd: true,
         icon: 'feature-layer',
         text: 'Feature Layer',
         type: 'panel',
-        widget: new NewFeatureLayerWidget({ view, layer: featureLayer }),
       },
       {
+        component: new Measure({ view }),
         icon: 'measure',
         text: 'Measure',
         type: 'panel',
-        widget: new Measure({ view }),
       },
       {
+        component: new PrintSnapshot({ view }),
         icon: 'print',
         text: 'Print',
         type: 'panel',
-        widget: new PrintSnapshot({ view, printServiceUrl: '' }),
       },
     ],
   });
