@@ -24,8 +24,8 @@
   "devDependencies": {
     "@types/luxon": "^3.4.2",
     "@types/papaparse": "^5.3.14",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
     "ansi-regex": ">=6.0.1",
     "chalk": "^5.3.0",
     "eslint": "^8.57.0",
@@ -36,13 +36,13 @@
     "sass": "^1.72.0",
     "tslib": "^2.6.2",
     "typescript": "^5.4.2",
-    "vite": "5.1.6"
+    "vite": "5.2.2"
   },
   "dependencies": {
-    "@arcgis/core": "^4.29.7",
+    "@arcgis/core": "^4.29.8",
     "@esri/calcite-components": "^2.6.0",
     "@esri/calcite-ui-icons": "^3.26.7",
-    "@vernonia/core": "^4.0.3",
+    "@vernonia/core": "^4.0.5",
     "luxon": "^3.4.4",
     "papaparse": "^5.4.1"
   },
