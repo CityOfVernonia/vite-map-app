@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import chalk from 'chalk';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-async function assets() {
+(async () => {
   // copy arcgis core assets
   const arcgisSrc = path.resolve(__dirname, './../node_modules/@arcgis/core/assets');
   const arcgisDest = path.resolve(__dirname, './../src/public/arcgis');
@@ -51,6 +51,4 @@ async function assets() {
       }
     }
   });
-}
-
-assets();
+}).call();
