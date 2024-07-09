@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "vite build --emptyOutDir",
     "dev": "vite",
     "lint": "eslint",
     "postinstall": "node ./scripts/postinstall.js",
@@ -33,14 +33,14 @@
     "sass": "^1.77.6",
     "tslib": "^2.6.3",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^7.15.0",
+    "typescript-eslint": "^7.16.0",
     "vite": "5.3.3"
   },
   "dependencies": {
-    "@arcgis/core": "^4.30.5",
+    "@arcgis/core": "^4.30.7",
     "@esri/calcite-components": "^2.10.1",
     "@esri/calcite-ui-icons": "^3.28.8",
-    "@vernonia/core": "^4.0.20",
+    "@vernonia/core": "^4.0.21",
     "luxon": "^3.4.4",
     "papaparse": "^5.4.1"
   },

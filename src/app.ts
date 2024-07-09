@@ -1,9 +1,16 @@
+import '@esri/calcite-components/dist/calcite/calcite.css';
 import './main.scss';
 
 import esri = __esri;
 
-// esri config and auth
+// esri config
 import esriConfig from '@arcgis/core/config';
+esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
+esriConfig.assetsPath = './arcgis';
+
+// calcite
+import { defineCustomElements } from '@esri/calcite-components/dist/loader';
+defineCustomElements(window, { resourcesUrl: './calcite/assets' });
 
 // map and view
 import Map from '@arcgis/core/Map';
@@ -25,10 +32,6 @@ import PrintSnapshot from '@vernonia/core/dist/components/panels/PrintSnapshot';
 
 import NewWidget from './widgets/NewWidget';
 import NewFeatureLayerWidget from './widgets/NewFeatureLayerWidget';
-
-// config portal and auth
-esriConfig.portalUrl = 'https://gis.vernonia-or.gov/portal';
-esriConfig.assetsPath = './arcgis';
 
 const load = async () => {
   const { cityLimits, extent, constraintExtent } = await cityBoundaryExtents('5e1e805849ac407a8c34945c781c1d54');

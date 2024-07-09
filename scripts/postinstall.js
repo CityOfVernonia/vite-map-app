@@ -17,11 +17,15 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
   }
   await fs.ensureDir(arcgisDest);
   await fs.copy(arcgisSrc, arcgisDest);
+  // delete unnecessary arcgis assets
+  await fs.remove(path.resolve(__dirname, './../src/public/arcgis/esri/css'));
+  await fs.remove(path.resolve(__dirname, './../src/public/arcgis/esri/themes'));
   console.log(chalk.green('@argis/core assets copied'));
 
   // copy calcite components
-  const calciteSrc = path.resolve(__dirname, './../node_modules/@esri/calcite-components/dist/calcite');
-  const calciteDest = path.resolve(__dirname, './../src/public/calcite');
+  const calciteSrc = path.resolve(__dirname, './../node_modules/@esri/calcite-components/dist/calcite/assets');
+  // cannot be flat directory must be `calcite/assests`
+  const calciteDest = path.resolve(__dirname, './../src/public/calcite/assets');
   if (!calciteSrc) {
     console.log(chalk.red.bold('@esri/calcite-components must be installed'));
     return;
