@@ -24,7 +24,7 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
   // copy calcite components
   const calciteSrc = path.resolve(__dirname, './../node_modules/@esri/calcite-components/dist/calcite/assets');
-  // cannot be flat directory must be `calcite/assests`
+  // cannot be flat directory must be `calcite/assets`
   const calciteDest = path.resolve(__dirname, './../src/public/calcite/assets');
   if (!calciteSrc) {
     console.log(chalk.red.bold('@esri/calcite-components must be installed'));
