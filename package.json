@@ -38,9 +38,9 @@
   },
   "dependencies": {
     "@arcgis/core": "^4.30.9",
-    "@esri/calcite-components": "^2.11.0",
-    "@vernonia/core": "^4.0.23",
-    "luxon": "^3.4.4",
+    "@esri/calcite-components": "^2.11.1",
+    "@vernonia/core": "^4.0.24",
+    "luxon": "^3.5.0",
     "papaparse": "^5.4.1"
   },
   "prettier": {
