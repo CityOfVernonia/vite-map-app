@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "jsx": "react",
     "jsxFactory": "tsx",
-    "types": ["@arcgis/core/interfaces.d.ts", "@esri/calcite-components", "luxon", "papaparse"]
+    "types": ["@arcgis/core/interfaces.d.ts", "@esri/calcite-components"]
   },
   "include": ["src/**/*"]
 }
