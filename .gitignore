@@ -2,3 +2,4 @@ dist
 node_modules
 src/public/arcgis
 src/public/calcite
+src/public/map-components
