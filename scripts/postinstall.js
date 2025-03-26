@@ -10,7 +10,9 @@ const include3D = false;
 
 const language = 'en';
 
-const widgets = ['Popup', 'Slider'];
+// Any components/widgets that will be loaded
+// Attribution and Zoom are required b/c the api loads them
+const widgets = ['Attribution', 'Feature', 'Features', 'LayerList', 'Legend', 'Popup', 'Search', 'Zoom'];
 
 (async () => {
   /**
@@ -49,6 +51,8 @@ const widgets = ['Popup', 'Slider'];
   }
 
   (await glob(`${arcgisDest}/components/assets/**/*.json`)).forEach(async (file) => {
+    if (file.includes('icon')) return;
+
     if (!file.includes(`${language}.`)) await fs.remove(file);
   });
 
@@ -97,6 +101,8 @@ const widgets = ['Popup', 'Slider'];
   await fs.copy(calciteSrc, calciteDest);
 
   (await glob(`${calciteDest}/**/*.json`)).forEach(async (file) => {
+    if (file.includes('icon')) return;
+
     if (!file.includes(`${language}.`)) await fs.remove(file);
   });
 
