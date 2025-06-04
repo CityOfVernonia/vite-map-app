@@ -10,9 +10,9 @@ const include3D = false;
 
 const language = 'en';
 
-// any @arcgis/core/widgets that will be loaded
+// any @arcgis/core/widgets or associated view model that will be loaded
 // Attribution and Zoom are required b/c the api loads them
-const widgets = ['Attribution', 'Feature', 'Features', 'LayerList', 'Legend', 'Popup', 'Search', 'Zoom'];
+const widgets = ['Attribution', 'Feature', 'Features', 'LayerList', 'Legend', 'Locate', 'Popup', 'Search', 'Zoom'];
 
 // any @arcgis/core/widgets files which are required
 const files = ['esri/widgets/support/t9n/uriUtils.json', `esri/widgets/support/t9n/uriUtils_${language}.json`];

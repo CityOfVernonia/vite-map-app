@@ -22,23 +22,23 @@
   },
   "homepage": "https://github.com/COV-GIS/vite-map-app#readme",
   "devDependencies": {
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^9.28.0",
     "chalk": "^5.4.1",
-    "eslint": "^9.26.0",
+    "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-prettier": "^5.4.1",
     "fs-extra": "^11.3.0",
     "glob": "^11.0.2",
     "prettier": "^3.5.3",
     "replace-in-file": "^8.3.0",
-    "sass": "^1.88.0",
+    "sass": "^1.89.1",
     "tslib": "^2.8.1",
     "typescript": "5.8.3",
-    "typescript-eslint": "^8.32.1",
+    "typescript-eslint": "^8.33.1",
     "vite": "^6.3.5"
   },
   "dependencies": {
-    "@vernonia/core": "^5.0.24"
+    "@vernonia/core": "^5.0.27"
   },
   "prettier": {
     "semi": true,
