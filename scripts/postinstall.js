@@ -94,8 +94,7 @@ const files = ['esri/widgets/support/t9n/uriUtils.json', `esri/widgets/support/t
 
     const calciteSrc = path.resolve(__dirname, './../node_modules/@esri/calcite-components/dist/calcite/assets');
 
-    // cannot be flat directory must be `calcite/assets`
-    const calciteDest = path.resolve(__dirname, './../src/public/calcite/assets');
+    const calciteDest = path.resolve(__dirname, './../src/public/calcite');
 
     if (!calciteSrc) {
       console.log(chalk.red.bold('@esri/calcite-components must be installed'));
