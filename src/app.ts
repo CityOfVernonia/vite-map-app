@@ -3,6 +3,7 @@ import '@arcgis/map-components/arcgis-map-components/arcgis-map-components.css';
 import '@vernonia/core/dist/scss/cov.css';
 import '@vernonia/core/dist/components/MapApplication.css';
 import '@vernonia/core/dist/components/Measure.css';
+import '@vernonia/core/dist/components/Sketch.css';
 
 // arcgis config
 import esriConfig from '@arcgis/core/config';
@@ -79,6 +80,12 @@ const load = async (): Promise<void> => {
         component: new (await import('@vernonia/core/dist/components/Measure')).default({ view, visible: false }),
         icon: 'measure',
         text: 'Measure',
+        type: 'calcite-panel',
+      },
+      {
+        component: new (await import('@vernonia/core/dist/components/Sketch')).default({ view, visible: false }),
+        icon: 'pencil',
+        text: 'Sketch',
         type: 'calcite-panel',
       },
     ],

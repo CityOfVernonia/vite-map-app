@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 import fs from 'fs-extra';
 import { glob } from 'glob';
 import path from 'path';
-import { replaceInFile } from 'replace-in-file';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const include3D = false;
@@ -136,7 +135,7 @@ const files = ['esri/widgets/support/t9n/uriUtils.json', `esri/widgets/support/t
 
     const mapComponentSrc = path.resolve(
       __dirname,
-      './../node_modules/@arcgis/map-components/dist/arcgis-map-components/assets',
+      './../node_modules/@arcgis/map-components/dist/cdn/assets',
     );
 
     const mapComponentDest = path.resolve(__dirname, './../src/public/map-components');
@@ -160,19 +159,6 @@ const files = ['esri/widgets/support/t9n/uriUtils.json', `esri/widgets/support/t
     for (const file of mapComponentsJson) {
       if (!file.includes(`${language}.`)) await fs.remove(file);
     }
-
-    // remove bad typing (hopefully be fixed soon)
-    await replaceInFile({
-      files: 'node_modules/@arcgis/map-components/dist/components/arcgis-basemap-gallery-item/customElement.d.ts',
-      from: 'type BasemapGalleryMessages = ArcgisBasemapGallery["messages"];',
-      to: '',
-    });
-
-    await replaceInFile({
-      files: 'node_modules/@arcgis/map-components/dist/components/arcgis-basemap-gallery-item/customElement.d.ts',
-      from: 'messages: BasemapGalleryMessages;',
-      to: '',
-    });
 
     console.log(chalk.green('@argis/map-components assets copied'));
   } catch (error) {
