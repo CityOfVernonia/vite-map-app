@@ -89,12 +89,14 @@ const files = ['esri/widgets/support/t9n/uriUtils.json', `esri/widgets/support/t
 
     /**
      * calcite
+     *
+     * Danger: This writes over the calcite assets provided by @argis/core with the most up-to-date @esri/calcite-components assets and may cause issues with @argis/core and @argis/map-components components if @esri/calcite-components version is greater than what is packaged with @arcgis/core and @argis/map-components.
      */
     console.log(chalk.green('Copying @esri/calcite-components...'));
 
     const calciteSrc = path.resolve(__dirname, './../node_modules/@esri/calcite-components/dist/calcite/assets');
 
-    const calciteDest = path.resolve(__dirname, './../src/public/calcite');
+    const calciteDest = path.resolve(__dirname, './../src/public/arcgis/components/assets');
 
     if (!calciteSrc) {
       console.log(chalk.red.bold('@esri/calcite-components must be installed'));
@@ -117,7 +119,7 @@ const files = ['esri/widgets/support/t9n/uriUtils.json', `esri/widgets/support/t
     }
 
     // copy calcite icons for arcgis
-    const arcgisIcons = `${arcgisDest}/components/assets/icon`;
+    const arcgisIcons = `${arcgisDest}/assets/icon`;
 
     await fs.remove(arcgisIcons);
 
@@ -132,10 +134,7 @@ const files = ['esri/widgets/support/t9n/uriUtils.json', `esri/widgets/support/t
      */
     console.log(chalk.green('Copying @argis/map-components...'));
 
-    const mapComponentSrc = path.resolve(
-      __dirname,
-      './../node_modules/@arcgis/map-components/dist/cdn/assets',
-    );
+    const mapComponentSrc = path.resolve(__dirname, './../node_modules/@arcgis/map-components/dist/cdn/assets');
 
     const mapComponentDest = path.resolve(__dirname, './../src/public/map-components');
 

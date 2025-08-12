@@ -16,7 +16,7 @@ setAssetPath('./map-components');
 
 // calcite assets
 import { defineCustomElements } from '@esri/calcite-components/dist/loader';
-defineCustomElements(window, { resourcesUrl: './calcite' });
+defineCustomElements(window, { resourcesUrl: './arcgis/components/assets' });
 
 const load = async (): Promise<void> => {
   const Map = (await import('@arcgis/core/Map')).default;
@@ -41,7 +41,7 @@ const load = async (): Promise<void> => {
 
   const imagery = new Basemap({
     portalItem: {
-      id: '2622b9aecacd401583981410e07d5bb9',
+      id: 'bf2fe31123c54cc48a9e008b9109457c',
     },
     title: 'Imagery',
   });
