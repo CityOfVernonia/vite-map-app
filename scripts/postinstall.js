@@ -11,7 +11,8 @@ const language = 'en';
 
 // any @arcgis/core/widgets or associated view model that will be loaded
 // Attribution and Zoom are required b/c the api loads them
-const widgets = ['Attribution', 'Feature', 'Features', 'LayerList', 'Legend', 'Locate', 'Popup', 'Search', 'Zoom'];
+// map-components not required
+const widgets = ['Attribution', 'Feature', 'Features', 'Popup', 'Search', 'Zoom'];
 
 // any @arcgis/core/widgets files which are required
 const files = ['esri/widgets/support/t9n/uriUtils.json', `esri/widgets/support/t9n/uriUtils_${language}.json`];
@@ -136,7 +137,7 @@ const files = ['esri/widgets/support/t9n/uriUtils.json', `esri/widgets/support/t
 
     const mapComponentSrc = path.resolve(__dirname, './../node_modules/@arcgis/map-components/dist/cdn/assets');
 
-    const mapComponentDest = path.resolve(__dirname, './../src/public/map-components');
+    const mapComponentDest = path.resolve(__dirname, './../src/public/map-components/assets');
 
     if (!mapComponentSrc) {
       console.log(chalk.red.bold('@argis/map-components must be installed'));

@@ -12,7 +12,7 @@ esriConfig.assetsPath = './arcgis';
 
 // map components
 import { setAssetPath } from '@arcgis/map-components';
-setAssetPath('./map-components');
+setAssetPath('./map-components/assets');
 
 // calcite assets
 import { defineCustomElements } from '@esri/calcite-components/dist/loader';
